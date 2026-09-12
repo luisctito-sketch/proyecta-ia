@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portal PROYECTA-IA para Taller de Tesis II - Ingeniería Electrónica.">
+  <title>PROYECTA-IA | Taller de Tesis II</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="access-locked">
+  <div id="accessGate" class="access-gate">
+    <div class="access-card">
+      <div class="access-logo">P</div>
+      <h2>Acceso a PROYECTA-IA</h2>
+      <p class="access-subtitle">Taller de Tesis II · Ingeniería Electrónica</p>
+      <p>Ingresa tu número de Carnet de Identidad para acceder al portal de apoyo metodológico.</p>
+      <label for="ciAccess">Número de C.I.</label>
+      <input id="ciAccess" type="password" inputmode="numeric" autocomplete="off" placeholder="Solo números">
+      <button id="accessBtn" class="primary access-button" type="button">Ingresar</button>
+      <p id="accessMessage" class="access-message" aria-live="polite"></p>
+      <p class="access-privacy">La verificación se realiza localmente y el número no se guarda en esta página.</p>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">P</div>
+        <div>
+          <h1>PROYECTA-IA</h1>
+          <p>Taller de Tesis II · Ingeniería Electrónica</p>
+        </div>
+      </div>
+      <button id="logoutBtn" class="logout-btn hidden" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-image">
+        <img src="hero_taller_tesis_ii.png" alt="PROYECTA-IA - Taller de Tesis II">
+      </div>
+      <div class="hero-copy">
+        <span class="eyebrow">PORTAL DE APOYO METODOLÓGICO</span>
+        <h2>Taller de Tesis II</h2>
+        <p class="lead">
+          Un espacio para revisar, comprobar y mejorar cada parte del Proyecto de Grado
+          mediante criterios académicos y metodológicos.
+        </p>
+        <div class="creator">
+          <span>Creado por</span>
+          <strong>Luis Cabezas Tito, Ph. D.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap intro">
+      <h2>Módulos disponibles de PROYECTA-IA</h2>
+      <p>
+        Selecciona el módulo que deseas utilizar. Cada herramienta revisa una parte específica del
+        Proyecto de Grado y ofrece retroalimentación sin hacer el trabajo por el estudiante.
+      </p>
+    </section>
+
+    <section class="wrap cards" aria-label="Módulos de PROYECTA-IA">
+      <article class="module-card blue">
+        <div class="module-top">
+          <span class="module-number">1.1</span>
+          <div class="module-icon">📝</div>
+        </div>
+        <div class="module-body">
+          <h3>Introducción</h3>
+          <p>
+            Revisa estructura, coherencia, contextualización, citas, redacción científica
+            y organización general de la Introducción.
+          </p>
+          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-introduccion/" target="_blank" rel="noopener">
+            Abrir chatbot <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="module-card green">
+        <div class="module-top">
+          <span class="module-number">1.2</span>
+          <div class="module-icon">📚</div>
+        </div>
+        <div class="module-body">
+          <h3>Antecedentes</h3>
+          <p>
+            Comprueba si los antecedentes corresponden a proyectos, tesis o investigaciones
+            previas semejantes y no simplemente a descripciones de tecnología.
+          </p>
+          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-antecedentes/" target="_blank" rel="noopener">
+            Abrir chatbot <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="module-card orange">
+        <div class="module-top">
+          <span class="module-number">1.3</span>
+          <div class="module-icon">🎯</div>
+        </div>
+        <div class="module-body">
+          <h3>Objeto de Estudio</h3>
+          <p>
+            Verifica que el objeto de estudio sea el sistema, prototipo, dispositivo o solución
+            electrónica central y que corresponda con el título y objetivo general.
+          </p>
+          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-objeto-estudio/" target="_blank" rel="noopener">
+            Abrir chatbot <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="module-card purple">
+        <div class="module-top">
+          <span class="module-number">↔</span>
+          <div class="module-icon">🔎</div>
+        </div>
+        <div class="module-body">
+          <h3>Título y Objetivo General</h3>
+          <p>
+            Comprueba si existe concordancia entre el título del Proyecto de Grado y el Objetivo General,
+            aplicando la regla metodológica definida en clase.
+          </p>
+          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-titulo-objetivo/" target="_blank" rel="noopener">
+            Abrir chatbot <span>→</span>
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <section class="wrap roadmap">
+      <div class="roadmap-card">
+        <div class="roadmap-icon">🧭</div>
+        <div>
+          <h3>PROYECTA-IA seguirá creciendo</h3>
+          <p>
+            Este portal irá incorporando progresivamente los demás apartados del Capítulo I
+            y, posteriormente, los módulos de los Capítulos II, III, IV, V y VI hasta completar
+            todo el Proyecto de Grado.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap principles">
+      <div class="principle">
+        <span>✓</span>
+        <div><strong>Revisar, no sustituir</strong><p>La herramienta orienta al estudiante sin hacer su proyecto por él o ella.</p></div>
+      </div>
+      <div class="principle">
+        <span>✓</span>
+        <div><strong>Coherencia transversal</strong><p>Cada módulo busca mantener relacionados título, objetivo y demás partes del Proyecto de Grado.</p></div>
+      </div>
+      <div class="principle">
+        <span>✓</span>
+        <div><strong>Rigor académico</strong><p>Se priorizan redacción científica, criterios metodológicos y fuentes verificables.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <strong>PROYECTA-IA</strong>
+        <p>Taller de Tesis II · Ingeniería Electrónica</p>
+      </div>
+      <div class="footer-creator">
+        <span>Creado por</span>
+        <strong>Luis Cabezas Tito, Ph. D.</strong>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://luisctito-sketch.github.io/proyecta-ia-acceso/access.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
