@@ -1,6 +1,14 @@
-# PROYECTA-IA — Portal principal de Taller de Tesis II
+# PROYECTA-IA — Portal principal público de Taller de Tesis II
 
-Portal web que reúne los módulos públicos de PROYECTA-IA actualmente disponibles.
+Este repositorio corresponde a la **página principal pública** de PROYECTA-IA.
+
+## Funcionamiento
+
+- La página principal **NO solicita C.I. ni clave de acceso**.
+- Cualquier persona puede ver los módulos disponibles.
+- Al hacer clic en un chatbot, se abre el módulo correspondiente.
+- **Cada chatbot conserva su propio control de acceso por C.I.**, conectado al sistema central ya configurado.
+- El repositorio de actualización de C.I. no aparece ni se enlaza públicamente desde esta página.
 
 ## Módulos incluidos
 
@@ -8,8 +16,6 @@ Portal web que reúne los módulos públicos de PROYECTA-IA actualmente disponib
 - Antecedentes
 - Objeto de Estudio
 - Título y Objetivo General
-
-El repositorio de actualización de C.I. (`proyecta-ia-acceso`) **no aparece ni se enlaza** en la página.
 
 ## Archivos
 
@@ -19,29 +25,16 @@ El repositorio de actualización de C.I. (`proyecta-ia-acceso`) **no aparece ni 
 - `hero_taller_tesis_ii.png`
 - `README.md`
 
-## Repositorio recomendado
+## Actualización en GitHub
 
-`proyecta-ia`
+En el repositorio `proyecta-ia` reemplaza los archivos existentes por los de este paquete.
 
-## Publicación en GitHub Pages
+No debes modificar `Settings > Pages`.
 
-1. Crea el repositorio `proyecta-ia`.
-2. Sube los archivos anteriores a la raíz.
-3. Ve a `Settings > Pages`.
-4. En `Build and deployment`, selecciona `Deploy from a branch`.
-5. Rama: `main`.
-6. Carpeta: `/ (root)`.
-7. Guarda.
-
-La dirección esperada será:
+La dirección pública seguirá siendo:
 
 `https://luisctito-sketch.github.io/proyecta-ia/`
 
-## Acceso de estudiantes
-
-El portal usa de manera interna el control central de acceso ya configurado en PROYECTA-IA.
-No se muestra un enlace al repositorio de actualización de C.I. dentro del portal.
-
 ## Ampliación futura
 
-Para añadir nuevos chatbots bastará con agregar una nueva tarjeta en `index.html`.
+Para incorporar nuevos chatbots bastará con añadir nuevas tarjetas/enlaces a esta misma portada.
