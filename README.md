@@ -1,42 +1,45 @@
-# PROYECTA-IA — Portal principal público y universal
+# PROYECTA-IA — Portal visual V2
 
-Esta versión del portal principal de **PROYECTA-IA** utiliza una identidad académica independiente, sin vincularse visualmente a una universidad específica.
+Esta versión corrige el problema de la portada anterior.
 
-## Enfoque
+## Cambio principal
 
-El portal está concebido para evolucionar hacia una herramienta abierta a estudiantes de:
+La portada ya NO usa la composición dividida (imagen a la izquierda + texto blanco a la derecha).
 
-- distintas carreras;
-- distintas universidades;
-- institutos;
-- otras instituciones educativas.
+Ahora muestra a todo el ancho la portada visual de PROYECTA-IA con:
 
-La portada mantiene la identidad de **Educcartes** y **PROYECTA-IA**.
+- Educcartes;
+- PROYECTA-IA;
+- Taller de Tesis II;
+- investigación, metodología, innovación, desarrollo e impacto;
+- imágenes académicas universales;
+- autor: Luis Cabezas Tito, Ph. D.;
+- sin referencias a una universidad específica.
 
-## Módulos incluidos actualmente
+## Importante: nuevo nombre de imagen
 
-- Introducción
-- Antecedentes
-- Objeto de Estudio
-- Título y Objetivo General
+La portada ahora se llama:
 
-## Acceso
+`portada_proyecta_ia_universal_v2.png`
 
-La portada principal es pública.  
-Cada chatbot conserva su propio control de acceso por C.I. según la configuración actual.
+Se cambió deliberadamente el nombre para evitar que GitHub Pages o el navegador sigan mostrando
+la imagen antigua desde caché.
 
-## Archivos
+## Para actualizar GitHub
 
-- `index.html`
-- `styles.css`
-- `app.js`
-- `hero_taller_tesis_ii.png`
-- `README.md`
+En el repositorio `proyecta-ia`:
 
-## Actualización en GitHub
+1. Sube/reemplaza:
+   - `index.html`
+   - `styles.css`
+   - `app.js`
+   - `README.md`
+   - `portada_proyecta_ia_universal_v2.png`
+2. Puedes dejar o borrar el antiguo `hero_taller_tesis_ii.png`; esta versión ya no lo utiliza.
+3. Confirma los cambios.
+4. Espera 1–3 minutos.
+5. Abre:
+   `https://luisctito-sketch.github.io/proyecta-ia/`
+6. Si todavía ves la versión anterior, usa `Ctrl + F5` en Windows para forzar la recarga.
 
-En el repositorio `proyecta-ia`, reemplaza los archivos actuales por los de este paquete.
-
-La dirección pública seguirá siendo:
-
-`https://luisctito-sketch.github.io/proyecta-ia/`
+La portada principal sigue siendo pública. Los C.I. se solicitan solo dentro de cada chatbot.
