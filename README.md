@@ -1,21 +1,29 @@
-# PROYECTA-IA — Portal principal público de Taller de Tesis II
+# PROYECTA-IA — Portal principal público y universal
 
-Este repositorio corresponde a la **página principal pública** de PROYECTA-IA.
+Esta versión del portal principal de **PROYECTA-IA** utiliza una identidad académica independiente, sin vincularse visualmente a una universidad específica.
 
-## Funcionamiento
+## Enfoque
 
-- La página principal **NO solicita C.I. ni clave de acceso**.
-- Cualquier persona puede ver los módulos disponibles.
-- Al hacer clic en un chatbot, se abre el módulo correspondiente.
-- **Cada chatbot conserva su propio control de acceso por C.I.**, conectado al sistema central ya configurado.
-- El repositorio de actualización de C.I. no aparece ni se enlaza públicamente desde esta página.
+El portal está concebido para evolucionar hacia una herramienta abierta a estudiantes de:
 
-## Módulos incluidos
+- distintas carreras;
+- distintas universidades;
+- institutos;
+- otras instituciones educativas.
+
+La portada mantiene la identidad de **Educcartes** y **PROYECTA-IA**.
+
+## Módulos incluidos actualmente
 
 - Introducción
 - Antecedentes
 - Objeto de Estudio
 - Título y Objetivo General
+
+## Acceso
+
+La portada principal es pública.  
+Cada chatbot conserva su propio control de acceso por C.I. según la configuración actual.
 
 ## Archivos
 
@@ -27,14 +35,8 @@ Este repositorio corresponde a la **página principal pública** de PROYECTA-IA.
 
 ## Actualización en GitHub
 
-En el repositorio `proyecta-ia` reemplaza los archivos existentes por los de este paquete.
-
-No debes modificar `Settings > Pages`.
+En el repositorio `proyecta-ia`, reemplaza los archivos actuales por los de este paquete.
 
 La dirección pública seguirá siendo:
 
 `https://luisctito-sketch.github.io/proyecta-ia/`
-
-## Ampliación futura
-
-Para incorporar nuevos chatbots bastará con añadir nuevas tarjetas/enlaces a esta misma portada.
