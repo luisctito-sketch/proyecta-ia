@@ -1,9 +1,12 @@
-// Portal público de PROYECTA-IA.
-// El control de acceso permanece únicamente dentro de cada chatbot.
-// Los enlaces se abren en una pestaña nueva y cada módulo solicita el C.I. autorizado.
+// PROYECTA-IA — Portal central actualizado.
+// La autenticación se gestiona exclusivamente desde:
+// https://luisctito-sketch.github.io/proyecta-ia-acceso/access.js
+//
+// Por ello, cuando ingresen nuevos estudiantes, no es necesario modificar este portal
+// ni los chatbots individuales: solo se actualiza el access.js central.
 
 document.querySelectorAll(".module-link").forEach(link=>{
   link.addEventListener("click", ()=>{
-    // No se almacena información personal ni académica en este portal.
+    // No se almacena información académica en el portal.
   });
 });
