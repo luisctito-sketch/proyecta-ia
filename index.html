@@ -7,20 +7,7 @@
   <title>PROYECTA-IA | Taller de Tesis II</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="access-locked">
-  <div id="accessGate" class="access-gate">
-    <div class="access-card">
-      <div class="access-logo">P</div>
-      <h2>Acceso a PROYECTA-IA</h2>
-      <p class="access-subtitle">Portal central · Proyecto de Grado</p>
-      <p>Ingresa tu número de Carnet de Identidad autorizado.</p>
-      <label for="ciAccess">Número de C.I.</label>
-      <input id="ciAccess" type="password" inputmode="numeric" autocomplete="off" placeholder="Solo números">
-      <button id="accessBtn" class="access-primary" type="button">Ingresar</button>
-      <p id="accessMessage" class="access-message" aria-live="polite"></p>
-      <p class="access-privacy">El acceso se verifica con la base central de PROYECTA-IA.</p>
-    </div>
-  </div>
+<body>
   <!-- PROYECTA-IA PORTAL VISUAL V2 - portada universal con Educcartes -->
 <header class="topbar">
     <div class="wrap topbar-inner">
@@ -31,7 +18,6 @@
           <p>Portal de apoyo metodológico para Proyectos de Grado</p>
         </div>
       </div>
-      <button id="logoutBtn" class="logout-btn hidden" type="button">Cerrar sesión</button>
     </div>
   </header>
 
@@ -46,9 +32,9 @@
     <section class="wrap intro">
       <h2>Módulos disponibles de PROYECTA-IA</h2>
       <p>
-        Selecciona el módulo que deseas utilizar. <strong>Todo PROYECTA-IA está protegido mediante C.I. autorizado.</strong>
-        El portal y los chatbots utilizan la misma base central de acceso. Cada herramienta revisa una parte
-        específica del Proyecto de Grado sin sustituir el trabajo del estudiante.
+        Selecciona el módulo que deseas utilizar. <strong>Este portal principal es público.</strong>
+        El número de C.I. autorizado se solicita únicamente al ingresar a cada chatbot. Todos los chatbots
+        utilizan la misma base central de acceso, por lo que los nuevos estudiantes se habilitan actualizando un solo archivo.
       </p>
     </section>
 
@@ -359,7 +345,6 @@
     </div>
   </footer>
 
-  <script src="https://luisctito-sketch.github.io/proyecta-ia-acceso/access.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -1,28 +1,24 @@
-# PROYECTA-IA — Portal principal actualizado
+# PROYECTA-IA — Portal principal público
 
-Repositorio donde debes subir estos archivos:
-
+Repositorio:
 `proyecta-ia`
 
-Dirección de GitHub Pages:
-
+Dirección:
 `https://luisctito-sketch.github.io/proyecta-ia/`
 
-## Protección por C.I.
+## Importante
 
-El portal principal ahora también está protegido.
+El PORTAL PRINCIPAL es público y no solicita C.I.
 
-Carga el mismo archivo central usado por todos los chatbots:
+Cada chatbot individual sí solicita el número de C.I. autorizado y todos consultan el mismo archivo central:
 
 `https://luisctito-sketch.github.io/proyecta-ia-acceso/access.js`
 
-Por tanto, cuando ingresen nuevos estudiantes:
+Por tanto, cuando ingresen nuevos estudiantes, solo debe actualizarse `access.js` en el repositorio `proyecta-ia-acceso`.
 
-1. se actualiza solamente `access.js` en el repositorio `proyecta-ia-acceso`;
-2. NO se modifica este portal;
-3. NO se modifica cada chatbot individual.
+No es necesario modificar uno por uno los chatbots.
 
-## Contenido actual del portal
+## Contenido del portal
 
 ### CAPÍTULO I — GENERALIDADES
 - 1.1 Introducción
@@ -44,12 +40,10 @@ Por tanto, cuando ingresen nuevos estudiantes:
 ### CAPÍTULO II
 - Marco Teórico y Conceptual
 
-## Archivos que debes reemplazar en GitHub
+## Archivos para reemplazar en GitHub
 
 - `index.html`
 - `styles.css`
 - `app.js`
 - `portada_proyecta_ia_universal_v2.png`
 - `README.md`
-
-No cambies el nombre de la imagen de portada.
