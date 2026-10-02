@@ -52,3 +52,10 @@ No es necesario modificar uno por uno los chatbots.
 - `app.js`
 - `portada_proyecta_ia_universal_v2.png`
 - `README.md`
+
+
+## Herramienta transversal añadida
+
+- **Figuras, Tablas y Redacción Científica**
+- URL: https://luisctito-sketch.github.io/proyecta-ia-figuras-tablas/
+- Revisa numeración por capítulo, formato de figuras y tablas, fuente/nota, resolución efectiva para impresión, tablas continuadas, referencia desde el texto, interpretación posterior y redacción impersonal.
