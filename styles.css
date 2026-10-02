@@ -91,3 +91,10 @@ footer{background:linear-gradient(135deg,var(--navy2),var(--navy));color:#fff;pa
 @media(max-width:650px){
   .transversal-cards,.chapter-two-cards{grid-template-columns:1fr}
 }
+
+
+/* CAPÍTULO III: añadido al final sin modificar el diseño existente */
+.chapter-three-heading>span{color:#d95c23;background:#fff1e9;border-color:#f1c7b2}
+.chapter-three-cards{grid-template-columns:repeat(3,minmax(0,1fr));}
+@media(max-width:980px){.chapter-three-cards{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:650px){.chapter-three-cards{grid-template-columns:1fr;}}
