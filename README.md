@@ -45,6 +45,13 @@ No es necesario modificar uno por uno los chatbots.
 - Desarrollo por Objetivos Específicos
 - Mediciones, Errores, Incertidumbre y Sistema Internacional
 
+
+### CAPÍTULO IV — PRUEBAS, RESULTADOS, ANÁLISIS Y/O EVALUACIÓN TÉCNICA
+- Pruebas, Resultados y Análisis Técnico
+  - https://luisctito-sketch.github.io/proyecta-ia-pruebas-resultados/
+- Evaluación Técnica
+  - https://luisctito-sketch.github.io/proyecta-ia-evaluacion-tecnica/
+
 ## Archivos para reemplazar en GitHub
 
 - `index.html`
