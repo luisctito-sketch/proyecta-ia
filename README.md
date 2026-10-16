@@ -66,3 +66,14 @@ No es necesario modificar uno por uno los chatbots.
 - **Figuras, Tablas y Redacción Científica**
 - URL: https://luisctito-sketch.github.io/proyecta-ia-figuras-tablas/
 - Revisa numeración por capítulo, formato de figuras y tablas, fuente/nota, resolución efectiva para impresión, tablas continuadas, referencia desde el texto, interpretación posterior y redacción impersonal.
+
+## Actualización — Capítulo V
+
+Se añadieron al final del portal público cuatro módulos del **CAPÍTULO V: ANÁLISIS Y/O EVALUACIÓN ECONÓMICA**:
+
+- V-A Análisis Económico — https://luisctito-sketch.github.io/proyecta-ia-analisis-economico/
+- V-B Evaluación Económica-Social — https://luisctito-sketch.github.io/proyecta-ia-evaluacion-economica-social/
+- V-C Evaluación Económico-Financiera — https://luisctito-sketch.github.io/proyecta-ia-evaluacion-financiera/
+- V-D Investigación y Estudio de Mercados — https://luisctito-sketch.github.io/proyecta-ia-estudio-mercados/
+
+El portal principal continúa siendo público. Cada módulo conserva su acceso individual mediante la base centralizada de C.I. autorizados de PROYECTA-IA.
