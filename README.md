@@ -77,3 +77,15 @@ Se añadieron al final del portal público cuatro módulos del **CAPÍTULO V: AN
 - V-D Investigación y Estudio de Mercados — https://luisctito-sketch.github.io/proyecta-ia-estudio-mercados/
 
 El portal principal continúa siendo público. Cada módulo conserva su acceso individual mediante la base centralizada de C.I. autorizados de PROYECTA-IA.
+
+
+## Actualización final
+
+El portal incluye ahora:
+- APA 7 junto a APA 6 en Herramientas Transversales.
+- Capítulo VI: Conclusiones y Recomendaciones.
+- Parte final: Referencias, Glosario, Apéndices y Anexos.
+- Resumen Final.
+- Revisión Final Integral como último módulo del portal.
+
+El portal principal permanece público. El acceso por C.I. se realiza dentro de cada chatbot mediante la base central de PROYECTA-IA.
