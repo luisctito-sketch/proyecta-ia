@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PROYECTA-IA: asistente para preparar diapositivas, oratoria, manejo del tribunal y demostración del prototipo en la predefensa o defensa final de un Proyecto de Grado.">
+  <title>PROYECTA-IA | Presentación y Defensa del Proyecto de Grado</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="access-locked">
+
+  <div id="accessGate" class="access-gate">
+    <div class="access-card">
+      <div class="access-logo">P</div>
+      <h2>Acceso a PROYECTA-IA</h2>
+      <p class="access-subtitle">Presentación · Predefensa · Defensa Final</p>
+      <p>Ingresa tu número de Carnet de Identidad autorizado.</p>
+      <label for="ciAccess">Número de C.I.</label>
+      <input id="ciAccess" type="password" inputmode="numeric" autocomplete="off" placeholder="Solo números">
+      <button id="accessBtn" class="primary access-button" type="button">Ingresar</button>
+      <p id="accessMessage" class="access-message" aria-live="polite"></p>
+      <p class="access-privacy">El acceso se valida mediante la base central de PROYECTA-IA.</p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <div class="brand-mark">P</div>
+        <div>
+          <h1>PROYECTA-IA</h1>
+          <p>Presentación y Defensa del Proyecto de Grado</p>
+          <p class="author">Realizado por: Luis Cabezas Tito, Ph. D.</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <div class="badge">DIAPOSITIVAS · ORATORIA · TRIBUNAL · PROTOTIPO</div>
+        <button id="logoutBtn" class="logout-btn hidden" type="button">Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">LA DEFENSA NO ES LEER EL DOCUMENTO: ES COMUNICAR Y DEMOSTRAR</span>
+      <h2>De tu Proyecto de Grado a una <span>defensa clara, visual, técnica y convincente</span></h2>
+      <p>Este módulo ayuda a organizar la presentación, controlar el tiempo, diseñar diapositivas eficaces, ensayar la exposición, preparar la demostración del prototipo y responder al tribunal con serenidad y fundamento.</p>
+      <div class="hero-grid">
+        <article><b>20 min</b><span>exposición con diapositivas</span></article>
+        <article><b>10 min</b><span>demostración del prototipo</span></article>
+        <article><b>16–17</b><span>diapositivas recomendadas</span></article>
+        <article><b>2 min</b><span>holgura dentro de la exposición</span></article>
+      </div>
+      <div class="source-rule"><strong>Base del módulo:</strong> el material del curso establece una defensa de 30 minutos: 20 minutos de exposición y 10 minutos para mostrar el prototipo. Si tu institución asigna un tiempo diferente, conserva la proporción y ajusta el plan.</div>
+    </section>
+
+    <nav class="section-nav">
+      <a href="#ruta">Ruta</a>
+      <a href="#planificador">Planificador</a>
+      <a href="#diseno">Diseño</a>
+      <a href="#revision">Revisión</a>
+      <a href="#contenido">Contenido</a>
+      <a href="#oratoria">Oratoria</a>
+      <a href="#tribunal">Tribunal</a>
+      <a href="#prototipo">Prototipo</a>
+      <a href="#ensayo">Ensayo</a>
+      <a href="#checklist">Checklist</a>
+      <a href="#asistente">Asistente</a>
+    </nav>
+
+    <section id="ruta" class="card">
+      <span class="section-number">1</span>
+      <h3>RUTA BASE DE LA DEFENSA</h3>
+      <p>La presentación debe seguir el mismo hilo lógico del Proyecto de Grado, pero mostrando únicamente lo esencial. La mayor parte del tiempo se concentra en la <b>Ingeniería del Proyecto / Marco Práctico</b>, porque allí se demuestra qué se diseñó, cómo se implementó y qué resultados produjo.</p>
+
+      <div class="timeline">
+        <div class="time-block"><span>00:00</span><b>Carátula</b><small>1 diap. · 15 s</small></div>
+        <div class="time-block"><span>00:15</span><b>Antecedentes + problema</b><small>1 diap. · 1:30</small></div>
+        <div class="time-block"><span>01:45</span><b>Objetivos</b><small>1 diap. · 0:30</small></div>
+        <div class="time-block"><span>02:15</span><b>Alcance y limitaciones</b><small>1 diap. · 1:00</small></div>
+        <div class="time-block"><span>03:15</span><b>Marco teórico</b><small>1–2 diap. · 2:00</small></div>
+        <div class="time-block practical"><span>05:15</span><b>Marco práctico</b><small>8 diap. · 10:00</small></div>
+        <div class="time-block"><span>15:15</span><b>Análisis económico</b><small>1 diap. · 1:00</small></div>
+        <div class="time-block"><span>16:15</span><b>Conclusiones + recomendaciones</b><small>2 diap. · 1:30</small></div>
+        <div class="time-block slack"><span>17:45</span><b>Holgura</b><small>2:00</small></div>
+      </div>
+
+      <div class="callout"><b>Resultado:</b> con 2 diapositivas de Marco Teórico se obtiene una presentación base de <b>17 diapositivas</b>; con una sola, <b>16 diapositivas</b>. La distribución deja margen para transiciones y pequeños imprevistos.</div>
+    </section>
+
+    <section id="planificador" class="card">
+      <span class="section-number">2</span>
+      <h3>PLANIFICADOR DE DIAPOSITIVAS Y TIEMPO</h3>
+      <p>Ajusta cantidades y tiempos. El sistema te avisará si sobrepasas los 20 minutos de exposición.</p>
+      <div class="planner-toolbar">
+        <label>Modalidad
+          <select id="defenseMode">
+            <option value="final">Defensa final</option>
+            <option value="pre">Predefensa</option>
+          </select>
+        </label>
+        <label>Tiempo de exposición
+          <input id="slideMinutes" type="number" min="5" max="60" value="20">
+        </label>
+        <label>Prototipo
+          <input id="prototypeMinutes" type="number" min="0" max="30" value="10">
+        </label>
+      </div>
+      <div class="table-wrap">
+        <table class="planner-table">
+          <thead><tr><th>Sección</th><th>Diapositivas</th><th>Tiempo (min)</th><th>Propósito</th></tr></thead>
+          <tbody id="plannerBody"></tbody>
+        </table>
+      </div>
+      <div id="plannerSummary" class="planner-summary"></div>
+      <div class="actions">
+        <button id="resetPlanner" type="button">Restablecer plan base</button>
+        <button id="copyPlanner" class="primary" type="button">Copiar plan</button>
+      </div>
+    </section>
+
+    <section id="diseno" class="card">
+      <span class="section-number">3</span>
+      <h3>CÓMO DEBEN VERSE LAS DIAPOSITIVAS</h3>
+      <div class="principles-grid">
+        <article><div class="icon">①</div><h4>Una idea por diapositiva</h4><p>Evita convertir la lámina en una página del documento. Cada diapositiva debe tener un mensaje principal reconocible.</p></article>
+        <article><div class="icon">◉</div><h4>Una imagen dominante</h4><p>Fotografías, diagramas, íconos o ilustraciones deben explicar; no decorar sin propósito.</p></article>
+        <article><div class="icon">Aa</div><h4>Jerarquía tipográfica</h4><p>Títulos grandes, palabras clave visibles y poco texto. Utiliza tamaños diferentes con consistencia.</p></article>
+        <article><div class="icon">◐</div><h4>Contraste</h4><p>Elige fondos y colores que permitan leer desde el fondo del aula. La elección debe ser deliberada y consistente.</p></article>
+        <article><div class="icon">▤</div><h4>Gráficos legibles</h4><p>Etiqueta ejes, unidades, curvas y valores relevantes. El tribunal debe comprender el gráfico en pocos segundos.</p></article>
+        <article><div class="icon">◆</div><h4>Diseño coherente</h4><p>Mantén una familia visual: tipografía, paleta, márgenes, ubicación de títulos, logotipo e íconos.</p></article>
+        <article><div class="icon">3</div><h4>Agrupa de tres en tres</h4><p>Cuando sea posible, organiza ideas en grupos breves y memorables; evita listas interminables.</p></article>
+        <article><div class="icon">%</div><h4>Resalta datos clave</h4><p>Haz visibles los resultados importantes: error, precisión, tiempo, costo, porcentaje, mejora o indicador.</p></article>
+      </div>
+      <div class="source-note"><b>Nota sobre el fondo:</b> tus materiales muestran dos recomendaciones distintas: en el video se aconseja evitar el fondo blanco predeterminado y elegir un fondo sencillo; en el PDF se afirma que los fondos blancos también pueden funcionar. PROYECTA-IA no impone un color: exige <b>contraste, legibilidad y consistencia</b>.</div>
+    </section>
+
+    <section class="card video-resource-card">
+      <span class="section-number">▶</span>
+      <h3>VIDEO GUÍA DEL DOCENTE</h3>
+      <p>Para complementar las recomendaciones del chatbot, revisa el video del docente <b>Luis Cabezas Tito, Ph. D.</b>, donde se explica cómo elaborar las diapositivas para la defensa de un Proyecto de Grado, qué información debe priorizarse y cómo preparar la exposición oral.</p>
+      <div class="video-link-box">
+        <div class="video-icon">▶</div>
+        <div>
+          <b>Cómo hacer diapositivas para defensa de Proyecto de Grado</b>
+          <p>Material audiovisual de apoyo para preparar la predefensa y defensa final.</p>
+        </div>
+        <a class="video-btn" href="https://youtu.be/q9mI0dHx6xg" target="_blank" rel="noopener noreferrer">Ver video en YouTube</a>
+      </div>
+    </section>
+
+    <section id="revision" class="card">
+      <span class="section-number">R</span>
+      <h3>REVISIÓN DE TUS DIAPOSITIVAS</h3>
+      <p>Antes de la predefensa o defensa final, conviene revisar la presentación completa y no solamente cada lámina por separado. Puedes compartir tu archivo de PowerPoint, PDF o capturas de las diapositivas con ChatGPT y solicitar una revisión visual y académica siguiendo los mismos criterios de este módulo.</p>
+
+      <div class="review-grid">
+        <article><b>Fondos y contraste</b><span>Legibilidad, consistencia, saturación, combinación de colores y distractores.</span></article>
+        <article><b>Tipografía</b><span>Tamaño, jerarquía, cantidad de fuentes, negritas y lectura desde el fondo del aula.</span></article>
+        <article><b>Ubicación</b><span>Alineación, márgenes, balance visual, superposiciones y espacios vacíos.</span></article>
+        <article><b>Contenido</b><span>Una idea principal, exceso de texto, palabras clave, tablas, fórmulas y resultados.</span></article>
+        <article><b>Recursos visuales</b><span>Imágenes, diagramas, gráficas, fotografías del prototipo e íconos pertinentes.</span></article>
+        <article><b>Tiempo</b><span>Relación entre cantidad de diapositivas, importancia de cada sección y duración prevista.</span></article>
+      </div>
+
+      <h4>Datos de tu presentación</h4>
+      <div class="input-grid review-inputs">
+        <label>Número de diapositivas
+          <input id="reviewSlideCount" type="number" min="1" value="17">
+        </label>
+        <label>Tiempo disponible (min)
+          <input id="reviewTotalTime" type="number" min="1" step="0.5" value="20">
+        </label>
+        <label>Tamaño mínimo de letra (pt)
+          <input id="reviewFontSize" type="number" min="8" value="24">
+        </label>
+        <label>Fondo predominante
+          <select id="reviewBackground">
+            <option value="claro">Claro</option>
+            <option value="oscuro">Oscuro</option>
+            <option value="mixto">Mixto</option>
+          </select>
+        </label>
+      </div>
+
+      <label>Aspectos que te preocupan o comentarios sobre tu diseño
+        <textarea id="reviewConcern" rows="4" placeholder="Ej.: algunas láminas tienen mucho texto, no sé si el fondo tiene suficiente contraste, mis gráficas se ven pequeñas..."></textarea>
+      </label>
+
+      <div class="actions">
+        <button id="quickDeckReview" class="primary" type="button">Revisión rápida</button>
+        <button id="copyDeckReviewPrompt" type="button">Copiar prompt para revisión completa con ChatGPT</button>
+      </div>
+      <div id="deckReviewOutput" class="output-box hidden"></div>
+      <p id="deckReviewStatus" class="small"></p>
+
+      <div class="share-note">
+        <b>Para una revisión visual real:</b> comparte con ChatGPT el archivo <b>.pptx</b>, el <b>PDF</b> de la presentación o capturas legibles de las diapositivas. El análisis puede revisar fondos, tipos y tamaños de letra, ubicación de elementos, consistencia visual, tiempos, densidad de texto, gráficos, imágenes y coherencia entre las láminas. El estudiante debe conservar siempre la decisión final sobre su presentación.
+      </div>
+    </section>
+
+    <section id="contenido" class="card">
+      <span class="section-number">4</span>
+      <h3>QUÉ PONER Y QUÉ NO PONER</h3>
+      <div class="two-col">
+        <div class="good-panel">
+          <h4>✓ Debe aparecer</h4>
+          <ul>
+            <li>Problema expresado con evidencia y no con largas narraciones.</li>
+            <li>Objetivo General y Objetivos Específicos sintetizados.</li>
+            <li>Diagrama de arquitectura del sistema.</li>
+            <li>Criterios de selección y cálculos realmente importantes.</li>
+            <li>Fotografías del prototipo, simulación, PCB, software y montaje.</li>
+            <li>Resultados medidos y gráficos fáciles de interpretar.</li>
+            <li>Conclusiones vinculadas a resultados.</li>
+          </ul>
+        </div>
+        <div class="bad-panel">
+          <h4>✕ Debe evitarse</h4>
+          <ul>
+            <li>Leer todas las láminas palabra por palabra.</li>
+            <li>Copiar párrafos completos del documento.</li>
+            <li>Colocar fórmulas que el expositor no pueda explicar.</li>
+            <li>Presentar tablas enormes ilegibles.</li>
+            <li>Usar el formato del documento APA como diseño de la diapositiva.</li>
+            <li>Llenar la presentación con animaciones, fondos extravagantes o adornos distractores.</li>
+            <li>Mostrar capturas de pantalla sin explicar qué debe observarse.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="slide-reviewer">
+        <h4>Revisor rápido de una diapositiva</h4>
+        <div class="input-grid">
+          <label>Palabras visibles <input id="wordsPerSlide" type="number" min="0" value="38"></label>
+          <label>Ideas principales <input id="ideasPerSlide" type="number" min="1" value="1"></label>
+          <label>Tamaño mínimo del texto (pt) <input id="minFont" type="number" min="8" value="24"></label>
+          <label>Gráficos / imágenes principales <input id="visualCount" type="number" min="0" value="1"></label>
+        </div>
+        <button id="reviewSlideBtn" class="primary" type="button">Revisar diapositiva</button>
+        <div id="slideReviewOutput" class="output-box hidden"></div>
+      </div>
+    </section>
+
+    <section id="oratoria" class="card">
+      <span class="section-number">5</span>
+      <h3>ORATORIA: LA DIAPOSITIVA ACOMPAÑA, TÚ DEFIENDES</h3>
+      <div class="oratory-grid">
+        <article><h4>No leas todo</h4><p>Usa palabras clave, imágenes y datos como disparadores. Explica con tus propias palabras; si necesitas una frase exacta, márcala claramente y vuelve luego a la explicación oral.</p></article>
+        <article><h4>Ensaya muchas veces</h4><p>El video recomienda practicar repetidamente antes de la defensa. Para quien siente miedo escénico, incluso propone varios ensayos diarios durante la semana previa.</p></article>
+        <article><h4>Guion, no libreto</h4><p>Prepara una ruta mental: inicio, problema, solución, demostración, resultados y cierre. No memorices palabra por palabra.</p></article>
+        <article><h4>Postura natural</h4><p>No permanezcas rígido, pero tampoco camines sin propósito. Mantén el cuerpo erguido y evita tics que revelen nerviosismo o distraigan.</p></article>
+        <article><h4>Contacto visual</h4><p>Distribuye la mirada por todo el tribunal y la audiencia. El material sugiere alternar puntos de contacto y no permanecer mirando la pantalla o las notas.</p></article>
+        <article><h4>Movimiento con intención</h4><p>Los gestos deben acompañar la idea. Evita dar la espalda al tribunal mientras explicas una diapositiva.</p></article>
+        <article><h4>Conversa con la audiencia</h4><p>Habla como quien explica un proyecto que conoce profundamente, no como quien recita un texto aprendido.</p></article>
+        <article><h4>Modo aprendiz</h4><p>Llega dispuesto a aclarar dudas, escuchar observaciones y aprender. Defender no significa confrontar.</p></article>
+      </div>
+      <div class="practice-strip"><b>Antes de tu turno:</b> asiste a otras sustentaciones, observa cómo pregunta el tribunal, cómo manejan el tiempo otros estudiantes y qué errores se repiten.</div>
+    </section>
+
+    <section id="tribunal" class="card">
+      <span class="section-number">6</span>
+      <h3>CÓMO RESPONDER AL TRIBUNAL</h3>
+      <div class="response-method">
+        <div><b>1. Escucha</b><span>No interrumpas. Identifica exactamente qué se pregunta.</span></div>
+        <div><b>2. Pausa</b><span>Dos o tres segundos para ordenar la respuesta transmiten control.</span></div>
+        <div><b>3. Responde</b><span>Primero la idea central; después evidencia, cálculo, medición o decisión técnica.</span></div>
+        <div><b>4. Sustenta</b><span>Relaciona la respuesta con el documento, metodología, diseño o resultados.</span></div>
+        <div><b>5. Cierra</b><span>Concluye en una frase clara; no sigas hablando si la pregunta ya fue contestada.</span></div>
+      </div>
+      <div class="callout warn"><b>Ante una observación difícil:</b> si el tribunal tiene razón, reconoce el punto y explica cómo lo corregirías. Si consideras que tu decisión está bien sustentada, defiéndela con calma, datos y metodología; no conviertas la defensa en una confrontación personal.</div>
+
+      <h4>Entrenador de preguntas</h4>
+      <div id="questionBox" class="question-box">Pulsa “Nueva pregunta” para iniciar el ensayo.</div>
+      <div class="actions">
+        <button id="newQuestionBtn" class="primary" type="button">Nueva pregunta</button>
+        <button id="showGuideBtn" type="button">Mostrar guía de respuesta</button>
+      </div>
+      <div id="answerGuide" class="output-box hidden"></div>
+    </section>
+
+    <section id="prototipo" class="card">
+      <span class="section-number">7</span>
+      <h3>LOS 10 MINUTOS DEL PROTOTIPO</h3>
+      <p>El material asigna diez minutos a la demostración. La siguiente secuencia es una <b>propuesta PROYECTA-IA</b> para aprovecharlos sin improvisar.</p>
+      <div class="prototype-plan">
+        <article><span>0:00–1:00</span><b>Propósito</b><p>Qué problema resuelve el prototipo y qué variable o proceso demostrará.</p></article>
+        <article><span>1:00–2:30</span><b>Arquitectura</b><p>Señala sensores, controlador, actuadores, alimentación y comunicaciones.</p></article>
+        <article><span>2:30–5:30</span><b>Prueba principal</b><p>Provoca una condición controlada y muestra la reacción del sistema.</p></article>
+        <article><span>5:30–7:00</span><b>Mediciones</b><p>Muestra valor de entrada, salida, tiempo de respuesta o indicador verificable.</p></article>
+        <article><span>7:00–8:30</span><b>Seguridad y robustez</b><p>Explica protecciones, límites y qué ocurre ante una condición anómala.</p></article>
+        <article><span>8:30–10:00</span><b>Cierre</b><p>Resume qué evidencia confirma que el prototipo cumple su función.</p></article>
+      </div>
+      <div class="stop-box"><b>Plan B obligatorio:</b> lleva fotografías, video corto y capturas de las mediciones reales por si una falla de energía, cableado, red o transporte impide la demostración en vivo. El Plan B respalda la evidencia; no sustituye una implementación que nunca fue probada.</div>
+    </section>
+
+    <section id="ensayo" class="card">
+      <span class="section-number">8</span>
+      <h3>CRONÓMETRO Y ENSAYO</h3>
+      <p>Practica la presentación completa y luego ensaya por bloques. La meta no es “hablar rápido”, sino eliminar contenido secundario hasta entrar cómodamente en el tiempo.</p>
+      <div class="timer">
+        <div id="timerDisplay">20:00</div>
+        <div class="timer-actions">
+          <button id="startTimer" class="primary">Iniciar</button>
+          <button id="pauseTimer">Pausar</button>
+          <button id="resetTimer">Reiniciar</button>
+        </div>
+        <div id="timerMessage" class="timer-message">Tiempo base para diapositivas.</div>
+      </div>
+      <div class="rehearsal-score">
+        <label>Tiempo real de tu último ensayo (min)
+          <input id="realPracticeTime" type="number" min="1" step="0.1" value="20">
+        </label>
+        <label>¿Cuántas veces ensayaste completo?
+          <input id="fullRehearsals" type="number" min="0" value="0">
+        </label>
+        <button id="evaluatePractice" class="primary">Evaluar ensayo</button>
+        <div id="practiceOutput" class="output-box hidden"></div>
+      </div>
+    </section>
+
+    <section id="checklist" class="card">
+      <span class="section-number">9</span>
+      <h3>CHECKLIST DE PREDEFENSA / DEFENSA</h3>
+      <div id="checklistItems" class="checklist"></div>
+      <div class="check-progress"><div id="checkBar"></div></div>
+      <p id="checkText">0 % completado</p>
+      <button id="resetChecklist" type="button">Reiniciar checklist</button>
+    </section>
+
+    <section id="asistente" class="card">
+      <span class="section-number">10</span>
+      <h3>ASISTENTE PARA CONSTRUIR TU PLAN PERSONAL</h3>
+      <p>Pega la información esencial de tu proyecto. PROYECTA-IA generará una ruta de exposición y un prompt para practicar con ChatGPT sin redactar por ti toda la defensa.</p>
+      <label>Título del proyecto
+        <textarea id="projectTitle" rows="2" placeholder="Título aprobado"></textarea>
+      </label>
+      <label>Problema central
+        <textarea id="projectProblem" rows="3" placeholder="Problema que debe comprender el tribunal"></textarea>
+      </label>
+      <label>Objetivo General
+        <textarea id="projectObjective" rows="3" placeholder="Objetivo General"></textarea>
+      </label>
+      <label>Resultado técnico más importante
+        <textarea id="projectResult" rows="3" placeholder="Ej.: error, precisión, tiempo de respuesta, mejora obtenida..."></textarea>
+      </label>
+      <label>¿Qué mostrarás físicamente?
+        <textarea id="projectPrototype" rows="3" placeholder="Prototipo, software, simulación, sistema, equipo..."></textarea>
+      </label>
+      <div class="actions">
+        <button id="buildDefensePlan" class="primary" type="button">Construir ruta</button>
+        <button id="copyDefensePrompt" type="button">Copiar prompt de ensayo</button>
+      </div>
+      <div id="personalPlan" class="output-box hidden"></div>
+      <p id="copyStatus" class="small"></p>
+    </section>
+
+    <section class="card sources-card">
+      <h3>CRITERIOS DE ESTE CHATBOT</h3>
+      <p><b>Derivados del material proporcionado:</b> distribución de 30 minutos; cantidad de diapositivas por bloque; prioridad del Marco Práctico; reglas visuales; no leer las láminas; ensayar; postura, gesticulación y contacto visual; asistir a otras sustentaciones y mantener una actitud de aprendizaje ante el tribunal.</p>
+      <p><b>Complementos PROYECTA-IA:</b> heurística del revisor de diapositivas, método de cinco pasos para responder, guion sugerido de los 10 minutos del prototipo, cronómetro, checklist y banco de preguntas.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div><strong>PROYECTA-IA</strong><p>Presentación y Defensa del Proyecto de Grado</p></div>
+      <div class="footer-author">Luis Cabezas Tito, Ph. D.</div>
+    </div>
+  </footer>
+
+  <script src="https://luisctito-sketch.github.io/proyecta-ia-acceso/access.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
