@@ -36,6 +36,9 @@ No es necesario modificar uno por uno los chatbots.
 ### HERRAMIENTAS TRANSVERSALES
 - Citas y Referencias APA 6
 - APA 6 en Microsoft Word
+- Normas APA 7
+- Figuras, Tablas y Redacción Científica
+- Presentación, Predefensa y Defensa Final — https://luisctito-sketch.github.io/proyecta-ia-defensa/
 
 ### CAPÍTULO II
 - Marco Teórico y Conceptual
@@ -89,3 +92,14 @@ El portal incluye ahora:
 - Revisión Final Integral como último módulo del portal.
 
 El portal principal permanece público. El acceso por C.I. se realiza dentro de cada chatbot mediante la base central de PROYECTA-IA.
+
+
+## Actualización — Presentación y Defensa
+
+Se añadió a **Herramientas Transversales** el módulo:
+
+- **Presentación, Predefensa y Defensa Final**
+- URL: https://luisctito-sketch.github.io/proyecta-ia-defensa/
+- Organiza una defensa base de 30 minutos, planifica diapositivas y tiempos, orienta diseño visual y oratoria, prepara la demostración del prototipo, entrena respuestas al tribunal y ofrece cronómetro y checklist.
+
+El portal principal continúa siendo público. Este nuevo chatbot conserva el acceso mediante la base central de C.I. autorizados de PROYECTA-IA.
