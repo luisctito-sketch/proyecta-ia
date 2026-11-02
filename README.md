@@ -36,6 +36,9 @@ No es necesario modificar uno por uno los chatbots.
 ### HERRAMIENTAS TRANSVERSALES
 - Citas y Referencias APA 6
 - APA 6 en Microsoft Word
+- Normas APA 7
+- Figuras, Tablas y Redacción Científica
+- Presentación, Predefensa y Defensa Final — https://luisctito-sketch.github.io/proyecta-ia/defensa/
 
 ### CAPÍTULO II
 - Marco Teórico y Conceptual
@@ -89,3 +92,32 @@ El portal incluye ahora:
 - Revisión Final Integral como último módulo del portal.
 
 El portal principal permanece público. El acceso por C.I. se realiza dentro de cada chatbot mediante la base central de PROYECTA-IA.
+
+
+## Actualización — Presentación y Defensa
+
+Se añadió a **Herramientas Transversales** el módulo:
+
+- **Presentación, Predefensa y Defensa Final**
+- URL: https://luisctito-sketch.github.io/proyecta-ia/defensa/
+- Organiza una defensa base de 30 minutos, planifica diapositivas y tiempos, orienta diseño visual y oratoria, prepara la demostración del prototipo, entrena respuestas al tribunal y ofrece cronómetro y checklist.
+
+El portal principal continúa siendo público. Este nuevo chatbot conserva el acceso mediante la base central de C.I. autorizados de PROYECTA-IA.
+
+
+## Corrección de enlace — Defensa
+
+El chatbot de **Presentación, Predefensa y Defensa Final** está ahora integrado dentro de este mismo repositorio, en la carpeta `defensa/`.
+
+Por tanto, no depende de publicar un segundo sitio GitHub Pages. El botón del portal abre:
+
+`https://luisctito-sketch.github.io/proyecta-ia/defensa/`
+
+Al actualizar el repositorio principal `proyecta-ia`, deben subirse también la carpeta `defensa/` y todos sus archivos.
+
+
+## Navegación actualizada
+
+Todos los botones **Abrir chatbot** se abren ahora en la **misma pestaña/ventana** del portal principal. Para regresar al menú general, cada chatbot utiliza el botón flotante global **🏠 PROYECTA-IA · Portal**, insertado por el archivo central `access.js`.
+
+Esta decisión evita acumular pestañas duplicadas del portal. Si el usuario desea abrir manualmente un módulo en una pestaña nueva, puede hacerlo con Ctrl+clic o con el menú contextual del navegador.
