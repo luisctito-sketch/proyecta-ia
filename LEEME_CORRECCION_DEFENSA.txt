@@ -1,0 +1,15 @@
+PROYECTA-IA - CORRECCIÓN DEL BOTÓN DEFENSA
+
+Corrección realizada:
+- Se mantiene intacto el portal y los dos nuevos chatbots transversales.
+- Se fuerza la visualización del botón "Abrir chatbot" en la tarjeta:
+  Presentación, Predefensa y Defensa Final.
+- El botón usa el enlace absoluto:
+  https://luisctito-sketch.github.io/proyecta-ia/defensa/
+- La carpeta defensa/ se incluye nuevamente como respaldo.
+
+FORMA RECOMENDADA DE ACTUALIZAR GITHUB:
+1. En el repositorio proyecta-ia, reemplazar SOLO el archivo index.html por el incluido en este paquete.
+2. No borrar styles.css ni ningún otro archivo existente.
+3. Verificar que la carpeta defensa/ siga presente.
+4. Esperar a que GitHub Pages finalice el despliegue y recargar con Ctrl+F5.

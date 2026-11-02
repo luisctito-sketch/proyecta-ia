@@ -6,6 +6,39 @@
   <meta name="description" content="Portal PROYECTA-IA para Taller de Tesis II y elaboración de Proyectos de Grado.">
   <title>PROYECTA-IA | Taller de Tesis II</title>
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Corrección puntual: botón visible del chatbot DEFENSA. No altera las demás tarjetas. */
+    .module-card.defensa-card { position: relative; }
+    .module-card.defensa-card .module-body { padding-bottom: 88px; }
+    .module-card.defensa-card .defensa-link {
+      position: absolute !important;
+      left: 20px !important;
+      right: 20px !important;
+      bottom: 20px !important;
+      width: auto !important;
+      min-height: 54px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px !important;
+      padding: 0 18px !important;
+      background: #5b21b6 !important;
+      color: #ffffff !important;
+      border-radius: 10px !important;
+      text-decoration: none !important;
+      font-weight: 800 !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 20 !important;
+      box-sizing: border-box !important;
+    }
+    .module-card.defensa-card .defensa-link:hover,
+    .module-card.defensa-card .defensa-link:focus-visible {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+    }
+  </style>
 </head>
 <body>
   <!-- PROYECTA-IA PORTAL VISUAL V2 - portada universal con Educcartes -->
@@ -342,7 +375,7 @@
         </div>
       </article>
 
-      <article class="module-card teal">
+      <article class="module-card teal defensa-card">
         <div class="module-top">
           <span class="module-number">DEFENSA</span>
           <div class="module-icon">🎤</div>
@@ -353,7 +386,7 @@
             Organiza las diapositivas y el tiempo de exposición, mejora el diseño visual y la oratoria,
             prepara la demostración del prototipo, practica preguntas del tribunal y utiliza un checklist antes de defender.
           </p>
-          <a class="module-link" href="./defensa/">
+          <a class="module-link defensa-link" href="https://luisctito-sketch.github.io/proyecta-ia/defensa/" aria-label="Abrir chatbot de Presentación, Predefensa y Defensa Final">
             Abrir chatbot <span>→</span>
           </a>
         </div>
