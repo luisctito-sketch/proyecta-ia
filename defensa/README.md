@@ -2,15 +2,13 @@
 
 Chatbot/web app educativo para preparar la predefensa o defensa final de un Proyecto de Grado.
 
-## Ubicación dentro del portal principal
+## Nombre recomendado del repositorio
 
-Este módulo está integrado en la carpeta:
+`proyecta-ia-defensa`
 
-`defensa/`
+URL esperada con GitHub Pages:
 
-URL publicada:
-
-`https://luisctito-sketch.github.io/proyecta-ia/defensa/`
+`https://luisctito-sketch.github.io/proyecta-ia-defensa/`
 
 ## Archivos
 
@@ -30,7 +28,13 @@ Por tanto, no se debe crear una lista local de C.I. en este repositorio. Las alt
 
 ## Publicación
 
-Este módulo no necesita un repositorio GitHub Pages independiente. Los cinco archivos deben permanecer dentro de la carpeta `defensa/` del repositorio principal `proyecta-ia`. Al publicar o actualizar el portal principal, la defensa queda disponible automáticamente en `/proyecta-ia/defensa/`.
+1. Crear el repositorio `proyecta-ia-defensa`.
+2. Subir los cinco archivos del ZIP a la raíz.
+3. Ir a **Settings → Pages**.
+4. Seleccionar **Deploy from a branch**.
+5. Elegir `main` y `/ (root)`.
+6. Guardar.
+7. Verificar el acceso con un C.I. autorizado.
 
 ## Video oficial de apoyo
 
