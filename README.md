@@ -1,57 +1,91 @@
-# PROYECTA-IA — Acceso central
+# PROYECTA-IA — Portal principal público
 
-Repositorio: `proyecta-ia-acceso`
+Repositorio:
+`proyecta-ia`
 
-Archivo que utilizan todos los chatbots:
-`https://luisctito-sketch.github.io/proyecta-ia-acceso/access.js`
-
-## Actualización de nuevos estudiantes
-
-Cuando exista una nueva lista de estudiantes:
-
-1. Generar las nuevas huellas de C.I. utilizando el mismo `salt` e `iterations`.
-2. Actualizar el arreglo `studentHashes` en `access.js`.
-3. Reemplazar **solo `access.js`** en este repositorio.
-4. Esperar a que GitHub Pages publique el cambio.
-5. Todos los chatbots quedan actualizados automáticamente.
-
-NO es necesario editar uno por uno los repositorios de los chatbots.
-
-## Seguridad
-
-Los números de C.I. no están escritos en texto plano en `access.js`; se almacenan huellas derivadas mediante PBKDF2/SHA-256.
-Este sistema es una barrera de acceso para el aula, no un sistema institucional de autenticación.
-
-
-## Actualización 2026-10-22
-- Se añadió un nuevo estudiante autorizado a la base central.
-- No se modificaron los accesos existentes ni la clave docente.
-- Los chatbots enlazados a `access.js` reciben la actualización automáticamente al reemplazar este archivo en GitHub.
-
-
-## Actualización 2026-11-02 — Botón global al portal principal
-
-Se añadió al archivo central `access.js` un botón flotante global:
-
-`🏠 PROYECTA-IA · Portal`
-
-Destino:
-
+Dirección:
 `https://luisctito-sketch.github.io/proyecta-ia/`
 
-### Cómo funciona
+## Importante
 
-- El botón aparece automáticamente después de un acceso autorizado.
-- Se incorpora en todos los chatbots que ya cargan este `access.js` central.
-- No es necesario editar uno por uno esos repositorios.
-- En el propio portal principal el botón se oculta automáticamente.
-- Al cerrar sesión el botón también se oculta.
-- En impresión no aparece.
+El PORTAL PRINCIPAL es público y no solicita C.I.
 
-### Qué archivo reemplazar en GitHub
+Cada chatbot individual sí solicita el número de C.I. autorizado y todos consultan el mismo archivo central:
 
-Para activar esta función en todos los chatbots, basta con reemplazar **`access.js`** en el repositorio:
+`https://luisctito-sketch.github.io/proyecta-ia-acceso/access.js`
 
-`proyecta-ia-acceso`
+Por tanto, cuando ingresen nuevos estudiantes, solo debe actualizarse `access.js` en el repositorio `proyecta-ia-acceso`.
 
-Los archivos `index.html` y `README.md` de este paquete solo documentan la actualización y pueden reemplazarse también si se desea mantener el repositorio completo al día.
+No es necesario modificar uno por uno los chatbots.
+
+## Contenido del portal
+
+### CAPÍTULO I — GENERALIDADES
+- 1.1 Introducción
+- 1.2 Antecedentes
+- 1.3 Objeto de Estudio
+- Título y Objetivo General
+- 1.4 Planteamiento del Problema
+- 1.5 Formulación del Problema
+- 1.6 Objetivos
+- 1.7 Justificaciones
+- 1.8 Alcances
+- 1.8.4 Límites
+- 1.9 Metodología
+
+### HERRAMIENTAS TRANSVERSALES
+- Citas y Referencias APA 6
+- APA 6 en Microsoft Word
+
+### CAPÍTULO II
+- Marco Teórico y Conceptual
+
+### CAPÍTULO III — INGENIERÍA DEL PROYECTO O MARCO PRÁCTICO
+- Sistema y Subsistemas
+- Desarrollo por Objetivos Específicos
+- Mediciones, Errores, Incertidumbre y Sistema Internacional
+
+
+### CAPÍTULO IV — PRUEBAS, RESULTADOS, ANÁLISIS Y/O EVALUACIÓN TÉCNICA
+- Pruebas, Resultados y Análisis Técnico
+  - https://luisctito-sketch.github.io/proyecta-ia-pruebas-resultados/
+- Evaluación Técnica
+  - https://luisctito-sketch.github.io/proyecta-ia-evaluacion-tecnica/
+
+## Archivos para reemplazar en GitHub
+
+- `index.html`
+- `styles.css`
+- `app.js`
+- `portada_proyecta_ia_universal_v2.png`
+- `README.md`
+
+
+## Herramienta transversal añadida
+
+- **Figuras, Tablas y Redacción Científica**
+- URL: https://luisctito-sketch.github.io/proyecta-ia-figuras-tablas/
+- Revisa numeración por capítulo, formato de figuras y tablas, fuente/nota, resolución efectiva para impresión, tablas continuadas, referencia desde el texto, interpretación posterior y redacción impersonal.
+
+## Actualización — Capítulo V
+
+Se añadieron al final del portal público cuatro módulos del **CAPÍTULO V: ANÁLISIS Y/O EVALUACIÓN ECONÓMICA**:
+
+- V-A Análisis Económico — https://luisctito-sketch.github.io/proyecta-ia-analisis-economico/
+- V-B Evaluación Económica-Social — https://luisctito-sketch.github.io/proyecta-ia-evaluacion-economica-social/
+- V-C Evaluación Económico-Financiera — https://luisctito-sketch.github.io/proyecta-ia-evaluacion-financiera/
+- V-D Investigación y Estudio de Mercados — https://luisctito-sketch.github.io/proyecta-ia-estudio-mercados/
+
+El portal principal continúa siendo público. Cada módulo conserva su acceso individual mediante la base centralizada de C.I. autorizados de PROYECTA-IA.
+
+
+## Actualización final
+
+El portal incluye ahora:
+- APA 7 junto a APA 6 en Herramientas Transversales.
+- Capítulo VI: Conclusiones y Recomendaciones.
+- Parte final: Referencias, Glosario, Apéndices y Anexos.
+- Resumen Final.
+- Revisión Final Integral como último módulo del portal.
+
+El portal principal permanece público. El acceso por C.I. se realiza dentro de cada chatbot mediante la base central de PROYECTA-IA.
