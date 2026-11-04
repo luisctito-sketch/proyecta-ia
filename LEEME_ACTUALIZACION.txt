@@ -1,0 +1,17 @@
+PROYECTA-IA · ACTUALIZACIÓN DEL PORTAL PRINCIPAL
+
+REPOSITORIO A ACTUALIZAR: proyecta-ia
+
+CAMBIOS:
+1. El botón visual CHATBOTS de la portada ahora abre un menú desplegable con todos los módulos publicados.
+2. El menú se construye dinámicamente a partir de las tarjetas existentes del portal.
+3. GUÍA abre un manual de usuario dentro del portal.
+4. ACERCA DE abre la descripción general de PROYECTA-IA, perfil del creador, contacto y enlaces.
+5. INICIO vuelve al comienzo del portal.
+6. No se modifica la estructura ni el diseño de las tarjetas existentes.
+
+ACTUALIZACIÓN RECOMENDADA:
+- Reemplazar SOLO index.html en la raíz del repositorio proyecta-ia.
+- No borrar styles.css, app.js, carpetas de chatbots ni la carpeta defensa.
+- La imagen portada_proyecta_ia_universal_v2.png se incluye únicamente como respaldo; si ya existe, puede conservarse la actual.
+- Tras publicar GitHub Pages, usar Ctrl+F5 en el navegador.

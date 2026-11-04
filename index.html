@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portal PROYECTA-IA para Taller de Tesis II y elaboración de Proyectos de Grado.">
-  <title>PROYECTA-IA | Taller de Tesis II</title>
-  <link rel="stylesheet" href="styles.css">
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Portal PROYECTA-IA de apoyo metodológico, académico y técnico para Proyectos de Grado." name="description"/>
+<title>PROYECTA-IA | Proyectos de Grado</title>
+<link href="styles.css" rel="stylesheet"/>
+<style>
     /* Corrección puntual: botón visible del chatbot DEFENSA. No altera las demás tarjetas. */
     .module-card.defensa-card { position: relative; }
     .module-card.defensa-card .module-body { padding-bottom: 88px; }
@@ -39,704 +38,933 @@
       transform: translateY(-1px);
     }
   </style>
-</head>
+<style id="proyecta-nav-enhancements">
+/* PROYECTA-IA · navegación funcional sobre la portada existente.
+   Mantiene intacta la imagen y el diseño del portal. */
+.hero-banner { position: relative !important; overflow: visible !important; }
+.hero-banner > img { display:block; width:100%; height:auto; }
+.portal-hotspot {
+  position:absolute; top:4.1%; height:12.8%; z-index:45;
+  border:0; padding:0; margin:0; background:transparent;
+  color:transparent; font-size:0; cursor:pointer; border-radius:10px;
+}
+.portal-hotspot:focus-visible { outline:3px solid #38bdf8; outline-offset:2px; }
+.portal-hotspot.home { left:40.1%; width:7.0%; }
+.portal-hotspot.chatbots { left:47.4%; width:9.0%; }
+.portal-hotspot.guide { left:56.7%; width:6.5%; }
+.portal-hotspot.about { left:63.5%; width:9.0%; }
+
+.portal-chatbot-dropdown {
+  position:absolute; z-index:80; top:18.2%; left:39.8%; right:3.2%;
+  background:#ffffff; color:#0f2340; border:1px solid #dbe4ef;
+  border-radius:16px; box-shadow:0 18px 50px rgba(3,24,53,.30);
+  padding:16px; max-height:min(70vh,620px); overflow:auto;
+}
+.portal-chatbot-dropdown[hidden] { display:none !important; }
+.portal-dropdown-head { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:10px; }
+.portal-dropdown-head h3 { margin:0; font:800 19px/1.2 Arial,Helvetica,sans-serif; color:#071b38; }
+.portal-dropdown-head p { margin:4px 0 0; font:400 12px/1.4 Arial,Helvetica,sans-serif; color:#64748b; }
+.portal-dropdown-close, .portal-dialog-close {
+  border:0; background:#eef4fb; color:#17324d; border-radius:999px; width:34px; height:34px;
+  font-size:20px; line-height:1; cursor:pointer; flex:0 0 auto;
+}
+.portal-menu-search {
+  width:100%; box-sizing:border-box; border:1px solid #cbd5e1; border-radius:10px;
+  padding:10px 12px; font:500 14px Arial,Helvetica,sans-serif; margin:4px 0 12px;
+}
+.portal-menu-groups { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.portal-menu-group { border:1px solid #e2e8f0; border-radius:12px; padding:10px; background:#f8fbff; }
+.portal-menu-group h4 { margin:0 0 7px; color:#075985; font:800 12px/1.3 Arial,Helvetica,sans-serif; text-transform:uppercase; letter-spacing:.03em; }
+.portal-menu-items { display:grid; gap:5px; }
+.portal-menu-item {
+  display:flex; align-items:center; gap:8px; text-decoration:none; color:#102a43;
+  padding:7px 8px; border-radius:8px; font:600 12.5px/1.35 Arial,Helvetica,sans-serif;
+}
+.portal-menu-item:hover, .portal-menu-item:focus-visible { background:#e7f1ff; color:#0755c7; outline:none; }
+.portal-menu-code { min-width:42px; color:#64748b; font-weight:800; font-size:11px; }
+
+.portal-dialog {
+  width:min(900px,calc(100vw - 36px)); max-height:min(82vh,760px); padding:0;
+  border:0; border-radius:18px; box-shadow:0 24px 70px rgba(3,24,53,.38); color:#102a43;
+}
+.portal-dialog::backdrop { background:rgba(3,24,53,.62); backdrop-filter:blur(2px); }
+.portal-dialog-shell { background:#fff; }
+.portal-dialog-header {
+  display:flex; align-items:center; justify-content:space-between; gap:18px;
+  padding:18px 22px; background:linear-gradient(135deg,#07386d,#0b5fa8); color:#fff;
+}
+.portal-dialog-header h2 { margin:0; font:800 24px/1.2 Arial,Helvetica,sans-serif; color:#fff; }
+.portal-dialog-header p { margin:4px 0 0; font:400 13px/1.4 Arial,Helvetica,sans-serif; color:#dbeafe; }
+.portal-dialog-body { padding:22px; overflow:auto; max-height:calc(82vh - 95px); font:400 15px/1.62 Arial,Helvetica,sans-serif; }
+.portal-dialog-body h3 { margin:20px 0 8px; color:#0b4f8a; font-size:18px; }
+.portal-dialog-body h3:first-child { margin-top:0; }
+.portal-dialog-body p { margin:0 0 12px; }
+.portal-dialog-body ol, .portal-dialog-body ul { padding-left:22px; margin:8px 0 14px; }
+.portal-dialog-body li { margin:5px 0; }
+.portal-info-box { background:#f0f7ff; border-left:4px solid #1677d2; border-radius:8px; padding:12px 14px; margin:12px 0 16px; }
+.portal-profile { display:grid; grid-template-columns:1fr 1fr; gap:12px 20px; margin:12px 0; }
+.portal-profile-item { background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:10px 12px; }
+.portal-profile-item strong { display:block; color:#0b4f8a; margin-bottom:2px; }
+.portal-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; margin:10px 0; }
+.portal-links a { display:block; text-decoration:none; background:#f4f8fc; border:1px solid #dbe4ef; border-radius:10px; padding:10px 12px; color:#0755c7; font-weight:700; }
+.portal-links a:hover { background:#e7f1ff; }
+.portal-contact { display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+.portal-contact a, .portal-contact span { background:#eef6ff; border-radius:999px; padding:7px 11px; color:#153a60; text-decoration:none; font-weight:600; }
+
+@media (max-width:900px) {
+  .portal-chatbot-dropdown { position:fixed; top:12px; left:12px; right:12px; max-height:calc(100vh - 24px); }
+  .portal-menu-groups { grid-template-columns:1fr; }
+  .portal-profile, .portal-links { grid-template-columns:1fr; }
+}
+@media (max-width:620px) {
+  .portal-dialog { width:calc(100vw - 18px); }
+  .portal-dialog-header { padding:15px; }
+  .portal-dialog-header h2 { font-size:20px; }
+  .portal-dialog-body { padding:16px; }
+  /* La portada sigue siendo la navegación visual; ampliamos levemente las zonas táctiles. */
+  .portal-hotspot { top:2.5%; height:16%; }
+}
+</style></head>
 <body>
-  <!-- PROYECTA-IA PORTAL VISUAL V2 - portada universal con Educcartes -->
+<!-- PROYECTA-IA PORTAL VISUAL V2 - portada universal con Educcartes -->
 <header class="topbar">
-    <div class="wrap topbar-inner">
-      <div class="brand">
-        <div class="brand-mark">P</div>
-        <div>
-          <h1>PROYECTA-IA</h1>
-          <p>Portal de apoyo metodológico para Proyectos de Grado</p>
-        </div>
-      </div>
-    </div>
-  </header>
+<div class="wrap topbar-inner">
+<div class="brand">
+<div class="brand-mark">P</div>
+<div>
+<h1>PROYECTA-IA</h1>
+<p>Portal de apoyo metodológico para Proyectos de Grado</p>
+</div>
+</div>
+</div>
+</header>
+<main>
+<section class="hero-banner wrap">
+<img alt="PROYECTA-IA - Taller de Tesis II - Educcartes" src="portada_proyecta_ia_universal_v2.png"/>
 
-  <main>
-    <section class="hero-banner wrap">
-      <img
-        src="portada_proyecta_ia_universal_v2.png"
-        alt="PROYECTA-IA - Taller de Tesis II - Educcartes"
-      >
-    </section>
-
-    <section class="wrap intro">
-      <h2>Módulos disponibles de PROYECTA-IA</h2>
-      <p>
+<button aria-label="Inicio" class="portal-hotspot home" id="portalHomeBtn" type="button"></button>
+<button aria-expanded="false" aria-haspopup="true" aria-label="Chatbots" class="portal-hotspot chatbots" id="portalChatbotsBtn" type="button"></button>
+<button aria-label="Guía de usuario" class="portal-hotspot guide" id="portalGuideBtn" type="button"></button>
+<button aria-label="Acerca de PROYECTA-IA" class="portal-hotspot about" id="portalAboutBtn" type="button"></button>
+<div class="portal-chatbot-dropdown" hidden="" id="portalChatbotDropdown">
+<div class="portal-dropdown-head">
+<div>
+<h3>Chatbots de PROYECTA-IA</h3>
+<p>Acceso rápido a todos los módulos actualmente publicados.</p>
+</div>
+<button aria-label="Cerrar menú" class="portal-dropdown-close" id="portalDropdownClose" type="button">×</button>
+</div>
+<input aria-label="Buscar un chatbot" class="portal-menu-search" id="portalMenuSearch" placeholder="Buscar un chatbot…" type="search"/>
+<div class="portal-menu-groups" id="portalMenuGroups"></div>
+</div>
+</section>
+<section class="wrap intro">
+<h2>Módulos disponibles de PROYECTA-IA</h2>
+<p>
         Selecciona el módulo que deseas utilizar. <strong>Este portal principal es público.</strong>
         El número de C.I. autorizado se solicita únicamente al ingresar a cada chatbot. Todos los chatbots
         utilizan la misma base central de acceso, por lo que los nuevos estudiantes se habilitan actualizando un solo archivo.
       </p>
-    </section>
-
-    <section class="wrap chapter-heading" aria-label="Capítulo I">
-      <span>CAPÍTULO I</span>
-      <h2>GENERALIDADES</h2>
-      <p>Revisión metodológica secuencial de los apartados que conforman el primer capítulo del Proyecto de Grado.</p>
-    </section>
-
-    <section class="wrap cards" aria-label="Módulos del Capítulo I de PROYECTA-IA">
-      <article class="module-card blue">
-        <div class="module-top">
-          <span class="module-number">1.1</span>
-          <div class="module-icon">📝</div>
-        </div>
-        <div class="module-body">
-          <h3>Introducción</h3>
-          <p>
+</section>
+<section aria-label="Capítulo I" class="wrap chapter-heading">
+<span>CAPÍTULO I</span>
+<h2>GENERALIDADES</h2>
+<p>Revisión metodológica secuencial de los apartados que conforman el primer capítulo del Proyecto de Grado.</p>
+</section>
+<section aria-label="Módulos del Capítulo I de PROYECTA-IA" class="wrap cards">
+<article class="module-card blue">
+<div class="module-top">
+<span class="module-number">1.1</span>
+<div class="module-icon">📝</div>
+</div>
+<div class="module-body">
+<h3>Introducción</h3>
+<p>
             Revisa estructura, coherencia, contextualización, citas, redacción científica
             y organización general de la Introducción.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-introduccion/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-introduccion/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card green">
-        <div class="module-top">
-          <span class="module-number">1.2</span>
-          <div class="module-icon">📚</div>
-        </div>
-        <div class="module-body">
-          <h3>Antecedentes</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card green">
+<div class="module-top">
+<span class="module-number">1.2</span>
+<div class="module-icon">📚</div>
+</div>
+<div class="module-body">
+<h3>Antecedentes</h3>
+<p>
             Comprueba si los antecedentes corresponden a proyectos, tesis o investigaciones
             previas semejantes y no simplemente a descripciones de tecnología.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-antecedentes/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-antecedentes/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card orange">
-        <div class="module-top">
-          <span class="module-number">1.3</span>
-          <div class="module-icon">🎯</div>
-        </div>
-        <div class="module-body">
-          <h3>Objeto de Estudio</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card orange">
+<div class="module-top">
+<span class="module-number">1.3</span>
+<div class="module-icon">🎯</div>
+</div>
+<div class="module-body">
+<h3>Objeto de Estudio</h3>
+<p>
             Verifica que el objeto de estudio identifique con precisión el elemento, sistema,
             prototipo o solución central y que corresponda con el título y el objetivo general.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-objeto-estudio/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-objeto-estudio/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card purple">
-        <div class="module-top">
-          <span class="module-number">↔</span>
-          <div class="module-icon">🔎</div>
-        </div>
-        <div class="module-body">
-          <h3>Título y Objetivo General</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card purple">
+<div class="module-top">
+<span class="module-number">↔</span>
+<div class="module-icon">🔎</div>
+</div>
+<div class="module-body">
+<h3>Título y Objetivo General</h3>
+<p>
             Comprueba la concordancia entre el título y el Objetivo General aplicando la regla
             metodológica definida en clase.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-titulo-objetivo/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-titulo-objetivo/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card blue">
-        <div class="module-top">
-          <span class="module-number">1.4</span>
-          <div class="module-icon">🔍</div>
-        </div>
-        <div class="module-body">
-          <h3>Planteamiento del Problema</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card blue">
+<div class="module-top">
+<span class="module-number">1.4</span>
+<div class="module-icon">🔍</div>
+</div>
+<div class="module-body">
+<h3>Planteamiento del Problema</h3>
+<p>
             Comprueba la Situación Actual, la descripción cuantitativa del problema identificado,
             las fuentes de los datos y la Situación Futura si el problema no se resuelve.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-planteamiento-problema/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-planteamiento-problema/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card green">
-        <div class="module-top">
-          <span class="module-number">1.5</span>
-          <div class="module-icon">❓</div>
-        </div>
-        <div class="module-body">
-          <h3>Formulación del Problema</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card green">
+<div class="module-top">
+<span class="module-number">1.5</span>
+<div class="module-icon">❓</div>
+</div>
+<div class="module-body">
+<h3>Formulación del Problema</h3>
+<p>
             Revisa la pregunta de investigación y su concordancia con el problema identificado,
             el adverbio «Cómo» y el verbo del Objetivo General.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-formulacion-problema/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-formulacion-problema/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card orange">
-        <div class="module-top">
-          <span class="module-number">1.6</span>
-          <div class="module-icon">🏁</div>
-        </div>
-        <div class="module-body">
-          <h3>Objetivos</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card orange">
+<div class="module-top">
+<span class="module-number">1.6</span>
+<div class="module-icon">🏁</div>
+</div>
+<div class="module-body">
+<h3>Objetivos</h3>
+<p>
             Revisa el Objetivo General y los Objetivos Específicos: verbo en infinitivo,
             preguntas de control, secuencia lógica y coherencia con la solución propuesta.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-objetivos/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-objetivos/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card purple">
-        <div class="module-top">
-          <span class="module-number">1.7</span>
-          <div class="module-icon">💡</div>
-        </div>
-        <div class="module-body">
-          <h3>Justificaciones</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card purple">
+<div class="module-top">
+<span class="module-number">1.7</span>
+<div class="module-icon">💡</div>
+</div>
+<div class="module-body">
+<h3>Justificaciones</h3>
+<p>
             Revisa las justificaciones Social, Técnica/Tecnológica, Económica y Académica,
             diferenciando el destinatario y el argumento propio de cada una.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-justificaciones/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-justificaciones/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card blue">
-        <div class="module-top">
-          <span class="module-number">1.8</span>
-          <div class="module-icon">🗺️</div>
-        </div>
-        <div class="module-body">
-          <h3>Alcances</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card blue">
+<div class="module-top">
+<span class="module-number">1.8</span>
+<div class="module-icon">🗺️</div>
+</div>
+<div class="module-body">
+<h3>Alcances</h3>
+<p>
             Revisa la delimitación Espacial/Geográfica, Temática y Temporal del proyecto,
             incluyendo ubicación, campos de conocimiento y duración del trabajo.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-alcances/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-alcances/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card green">
-        <div class="module-top">
-          <span class="module-number">1.8.4</span>
-          <div class="module-icon">🛡️</div>
-        </div>
-        <div class="module-body">
-          <h3>Límites del Proyecto</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card green">
+<div class="module-top">
+<span class="module-number">1.8.4</span>
+<div class="module-icon">🛡️</div>
+</div>
+<div class="module-body">
+<h3>Límites del Proyecto</h3>
+<p>
             Comprueba qué aspectos quedan deliberadamente fuera del proyecto y si funcionan
             como un escudo metodológico coherente con objetivos y alcances.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-limites/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-limites/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card orange">
-        <div class="module-top">
-          <span class="module-number">1.9</span>
-          <div class="module-icon">🧭</div>
-        </div>
-        <div class="module-body">
-          <h3>Metodología</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card orange">
+<div class="module-top">
+<span class="module-number">1.9</span>
+<div class="module-icon">🧭</div>
+</div>
+<div class="module-body">
+<h3>Metodología</h3>
+<p>
             Orienta y revisa enfoque, alcance, métodos, técnicas, instrumentos de investigación
             y procedimiento ligado a la secuencia de los Objetivos Específicos.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-metodologia/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-metodologia/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-    </section>
-
-
-    <section class="wrap chapter-heading transversal-heading" aria-label="Herramientas transversales">
-      <span>HERRAMIENTAS TRANSVERSALES</span>
-      <h2>REDACCIÓN, CITAS, REFERENCIAS, FIGURAS, TABLAS, APA Y DEFENSA</h2>
-      <p>Herramientas de apoyo que acompañan la redacción académica, la cohesión del texto, el formato del documento y la preparación de la predefensa o defensa final del Proyecto de Grado.</p>
-    </section>
-
-    <section class="wrap cards transversal-cards" aria-label="Herramientas transversales de redacción, viñetas, conectores, párrafos, APA 6, APA 7, figuras, tablas y defensa">
-      <article class="module-card purple">
-        <div class="module-top">
-          <span class="module-number">APA 6</span>
-          <div class="module-icon">📑</div>
-        </div>
-        <div class="module-body">
-          <h3>Citas y Referencias APA 6</h3>
-          <p>
+</a>
+</div>
+</article>
+</section>
+<section aria-label="Herramientas transversales" class="wrap chapter-heading transversal-heading">
+<span>HERRAMIENTAS TRANSVERSALES</span>
+<h2>REDACCIÓN, CITAS, REFERENCIAS, FIGURAS, TABLAS, APA Y DEFENSA</h2>
+<p>Herramientas de apoyo que acompañan la redacción académica, la cohesión del texto, el formato del documento y la preparación de la predefensa o defensa final del Proyecto de Grado.</p>
+</section>
+<section aria-label="Herramientas transversales de redacción, viñetas, conectores, párrafos, APA 6, APA 7, figuras, tablas y defensa" class="wrap cards transversal-cards">
+<article class="module-card purple">
+<div class="module-top">
+<span class="module-number">APA 6</span>
+<div class="module-icon">📑</div>
+</div>
+<div class="module-body">
+<h3>Citas y Referencias APA 6</h3>
+<p>
             Orienta sobre citas textuales, paráfrasis, número de autores, referencias bibliográficas,
             control de fuentes reales y revisión de párrafos con citas.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-apa6/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-apa6/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card blue">
-        <div class="module-top">
-          <span class="module-number">WORD</span>
-          <div class="module-icon">🖥️</div>
-        </div>
-        <div class="module-body">
-          <h3>APA 6 en Microsoft Word</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card blue">
+<div class="module-top">
+<span class="module-number">WORD</span>
+<div class="module-icon">🖥️</div>
+</div>
+<div class="module-body">
+<h3>APA 6 en Microsoft Word</h3>
+<p>
             Enseña a utilizar el gestor de citas de Word, seleccionar el tipo correcto de fuente,
             revisar bibliografía automática y corregir «pág.»/«págs.» por «p.»/«pp.».
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-apa6-word/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-apa6-word/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card orange">
-        <div class="module-top">
-          <span class="module-number">APA 7</span>
-          <div class="module-icon">📘</div>
-        </div>
-        <div class="module-body">
-          <h3>Normas APA 7</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card orange">
+<div class="module-top">
+<span class="module-number">APA 7</span>
+<div class="module-icon">📘</div>
+</div>
+<div class="module-body">
+<h3>Normas APA 7</h3>
+<p>
             Explica y compara APA 7 con APA 6, revisa citas textuales y parafraseadas, autores y referencias,
             incluye ejemplos y permite descargar el archivo APASeventhEdition.xsl para añadir APA 7 a Microsoft Word.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-apa7/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-apa7/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card purple">
-        <div class="module-top">
-          <span class="module-number">REDACCIÓN</span>
-          <div class="module-icon">✍️</div>
-        </div>
-        <div class="module-body">
-          <h3>Viñetas, Conectores y Párrafos</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card purple">
+<div class="module-top">
+<span class="module-number">REDACCIÓN</span>
+<div class="module-icon">✍️</div>
+</div>
+<div class="module-body">
+<h3>Viñetas, Conectores y Párrafos</h3>
+<p>
             Enseña el uso coherente de viñetas y enumeraciones, conectores según su relación lógica y construcción de párrafos académicos; incluye ejemplos para Telecomunicaciones, Control y Automatización y Electromedicina, además de un revisor de TXT, DOCX y PDF.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-redaccion-academica/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-redaccion-academica/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card blue">
-        <div class="module-top">
-          <span class="module-number">CARTAS</span>
-          <div class="module-icon">📄</div>
-        </div>
-        <div class="module-body">
-          <h3>Cartas Académicas</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card blue">
+<div class="module-top">
+<span class="module-number">CARTAS</span>
+<div class="module-icon">📄</div>
+</div>
+<div class="module-body">
+<h3>Cartas Académicas</h3>
+<p>
             Orienta y proporciona modelos editables para la carta-aval o conformidad del tutor y para solicitudes
             de cambio de título, Objetivo General y Objetivos Específicos dirigidas al Honorable Consejo de Carrera.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-cartas-academicas/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-cartas-academicas/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card green">
-        <div class="module-top">
-          <span class="module-number">FIG./TAB.</span>
-          <div class="module-icon">📊</div>
-        </div>
-        <div class="module-body">
-          <h3>Figuras, Tablas y Redacción Científica</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card green">
+<div class="module-top">
+<span class="module-number">FIG./TAB.</span>
+<div class="module-icon">📊</div>
+</div>
+<div class="module-body">
+<h3>Figuras, Tablas y Redacción Científica</h3>
+<p>
             Revisa numeración por capítulo, títulos, fuente y nota, calidad de impresión a 300 ppp,
             tablas continuadas, referencia desde el texto, interpretación posterior y redacción impersonal en tercera persona.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-figuras-tablas/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-figuras-tablas/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card teal defensa-card">
-        <div class="module-top">
-          <span class="module-number">DEFENSA</span>
-          <div class="module-icon">🎤</div>
-        </div>
-        <div class="module-body">
-          <h3>Presentación, Predefensa y Defensa Final</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card teal defensa-card">
+<div class="module-top">
+<span class="module-number">DEFENSA</span>
+<div class="module-icon">🎤</div>
+</div>
+<div class="module-body">
+<h3>Presentación, Predefensa y Defensa Final</h3>
+<p>
             Organiza las diapositivas y el tiempo de exposición, mejora el diseño visual y la oratoria,
             prepara la demostración del prototipo, practica preguntas del tribunal y utiliza un checklist antes de defender.
           </p>
-          <a class="module-link defensa-link" href="https://luisctito-sketch.github.io/proyecta-ia/defensa/" aria-label="Abrir chatbot de Presentación, Predefensa y Defensa Final">
+<a aria-label="Abrir chatbot de Presentación, Predefensa y Defensa Final" class="module-link defensa-link" href="https://luisctito-sketch.github.io/proyecta-ia/defensa/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-    </section>
-
-    <section class="wrap chapter-heading chapter-two-heading" aria-label="Capítulo II">
-      <span>CAPÍTULO II</span>
-      <h2>MARCO TEÓRICO Y CONCEPTUAL</h2>
-      <p>Construcción y revisión del sustento teórico y conceptual del Proyecto de Grado, con control de redacción científica, citas e integridad académica.</p>
-    </section>
-
-    <section class="wrap cards chapter-two-cards" aria-label="Módulos del Capítulo II de PROYECTA-IA">
-      <article class="module-card green chapter-two-card">
-        <div class="module-top">
-          <span class="module-number">II</span>
-          <div class="module-icon">📚</div>
-        </div>
-        <div class="module-body">
-          <h3>Marco Teórico y Conceptual</h3>
-          <p>
+</a>
+</div>
+</article>
+</section>
+<section aria-label="Capítulo II" class="wrap chapter-heading chapter-two-heading">
+<span>CAPÍTULO II</span>
+<h2>MARCO TEÓRICO Y CONCEPTUAL</h2>
+<p>Construcción y revisión del sustento teórico y conceptual del Proyecto de Grado, con control de redacción científica, citas e integridad académica.</p>
+</section>
+<section aria-label="Módulos del Capítulo II de PROYECTA-IA" class="wrap cards chapter-two-cards">
+<article class="module-card green chapter-two-card">
+<div class="module-top">
+<span class="module-number">II</span>
+<div class="module-icon">📚</div>
+</div>
+<div class="module-body">
+<h3>Marco Teórico y Conceptual</h3>
+<p>
             Ayuda a construir la estructura desde los Objetivos General y Específicos,
             diferencia Marco Teórico y Conceptual, previene plagio, revisa párrafos y controla citas APA 6.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-marco-teorico-conceptual/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-marco-teorico-conceptual/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-    </section>
-
-    <section class="wrap chapter-heading chapter-three-heading" aria-label="Capítulo III">
-      <span>CAPÍTULO III</span>
-      <h2>INGENIERÍA DEL PROYECTO O MARCO PRÁCTICO</h2>
-      <p>Diseño y desarrollo técnico del proyecto, desde la arquitectura general del sistema hasta la ejecución de los Objetivos Específicos y el tratamiento correcto de las mediciones experimentales.</p>
-    </section>
-
-    <section class="wrap cards chapter-three-cards" aria-label="Módulos del Capítulo III de PROYECTA-IA">
-      <article class="module-card blue">
-        <div class="module-top">
-          <span class="module-number">III-A</span>
-          <div class="module-icon">🧩</div>
-        </div>
-        <div class="module-body">
-          <h3>Sistema y Subsistemas</h3>
-          <p>
+</a>
+</div>
+</article>
+</section>
+<section aria-label="Capítulo III" class="wrap chapter-heading chapter-three-heading">
+<span>CAPÍTULO III</span>
+<h2>INGENIERÍA DEL PROYECTO O MARCO PRÁCTICO</h2>
+<p>Diseño y desarrollo técnico del proyecto, desde la arquitectura general del sistema hasta la ejecución de los Objetivos Específicos y el tratamiento correcto de las mediciones experimentales.</p>
+</section>
+<section aria-label="Módulos del Capítulo III de PROYECTA-IA" class="wrap cards chapter-three-cards">
+<article class="module-card blue">
+<div class="module-top">
+<span class="module-number">III-A</span>
+<div class="module-icon">🧩</div>
+</div>
+<div class="module-body">
+<h3>Sistema y Subsistemas</h3>
+<p>
             Orienta el inicio del Capítulo III: párrafo introductorio, definición del sistema,
             arquitectura general, identificación y descripción de subsistemas y relación entre hardware, software y firmware.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-ingenieria-proyecto/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-ingenieria-proyecto/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card orange">
-        <div class="module-top">
-          <span class="module-number">III-B</span>
-          <div class="module-icon">⚙️</div>
-        </div>
-        <div class="module-body">
-          <h3>Desarrollo por Objetivos Específicos</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card orange">
+<div class="module-top">
+<span class="module-number">III-B</span>
+<div class="module-icon">⚙️</div>
+</div>
+<div class="module-body">
+<h3>Desarrollo por Objetivos Específicos</h3>
+<p>
             Convierte cada Objetivo Específico en una ruta de ingeniería y revisa selección tecnológica,
             modelos matemáticos, cálculos, hardware, simulación, algoritmos, programación, implementación y diseño mecánico cuando corresponda.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-desarrollo-capitulo3/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-desarrollo-capitulo3/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card purple">
-        <div class="module-top">
-          <span class="module-number">III-C</span>
-          <div class="module-icon">📏</div>
-        </div>
-        <div class="module-body">
-          <h3>Mediciones, Errores, Incertidumbre y SI</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card purple">
+<div class="module-top">
+<span class="module-number">III-C</span>
+<div class="module-icon">📏</div>
+</div>
+<div class="module-body">
+<h3>Mediciones, Errores, Incertidumbre y SI</h3>
+<p>
             Ayuda a planificar y analizar mediciones repetidas mediante media, varianza, desviación estándar,
             teoría de errores e incertidumbre, cifras significativas, redondeo y uso correcto del Sistema Internacional de Unidades.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-mediciones/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-mediciones/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-    </section>
-
-
-    <section class="wrap chapter-heading chapter-four-heading" aria-label="Capítulo IV">
-      <span>CAPÍTULO IV</span>
-      <h2>PRUEBAS, RESULTADOS, ANÁLISIS Y/O EVALUACIÓN TÉCNICA</h2>
-      <p>Verificación funcional y evaluación cuantitativa del desempeño del proyecto mediante pruebas, resultados, análisis técnico, indicadores, teoría de errores y comparación con referencias externas defendibles.</p>
-    </section>
-
-    <section class="wrap cards chapter-four-cards" aria-label="Módulos del Capítulo IV de PROYECTA-IA">
-      <article class="module-card blue">
-        <div class="module-top">
-          <span class="module-number">IV-A</span>
-          <div class="module-icon">🧪</div>
-        </div>
-        <div class="module-body">
-          <h3>Pruebas, Resultados y Análisis Técnico</h3>
-          <p>
+</a>
+</div>
+</article>
+</section>
+<section aria-label="Capítulo IV" class="wrap chapter-heading chapter-four-heading">
+<span>CAPÍTULO IV</span>
+<h2>PRUEBAS, RESULTADOS, ANÁLISIS Y/O EVALUACIÓN TÉCNICA</h2>
+<p>Verificación funcional y evaluación cuantitativa del desempeño del proyecto mediante pruebas, resultados, análisis técnico, indicadores, teoría de errores y comparación con referencias externas defendibles.</p>
+</section>
+<section aria-label="Módulos del Capítulo IV de PROYECTA-IA" class="wrap cards chapter-four-cards">
+<article class="module-card blue">
+<div class="module-top">
+<span class="module-number">IV-A</span>
+<div class="module-icon">🧪</div>
+</div>
+<div class="module-body">
+<h3>Pruebas, Resultados y Análisis Técnico</h3>
+<p>
             Orienta la planificación de pruebas de hardware, software e integración/firmware; ayuda a construir
             matrices de validación, criterios de aceptación, tablas, gráficas y el análisis técnico de los resultados obtenidos.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-pruebas-resultados/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-pruebas-resultados/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card orange">
-        <div class="module-top">
-          <span class="module-number">IV-B</span>
-          <div class="module-icon">📊</div>
-        </div>
-        <div class="module-body">
-          <h3>Evaluación Técnica</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card orange">
+<div class="module-top">
+<span class="module-number">IV-B</span>
+<div class="module-icon">📊</div>
+</div>
+<div class="module-body">
+<h3>Evaluación Técnica</h3>
+<p>
             Evalúa cuantitativamente el desempeño del sistema, subsistemas, hardware, software o firmware mediante
             precisión, exactitud, confiabilidad, eficiencia, eficacia, QoS, control, teoría de errores y criterios externos de comparación.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-evaluacion-tecnica/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-evaluacion-tecnica/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-    </section>
-
-    <section class="wrap chapter-heading chapter-five-heading" aria-label="Capítulo V">
-      <span>CAPÍTULO V</span>
-      <h2>ANÁLISIS Y/O EVALUACIÓN ECONÓMICA</h2>
-      <p>Análisis de los costos del proyecto y, cuando corresponda, evaluación económica-social, evaluación económico-financiera e investigación de mercados para sustentar su factibilidad.</p>
-    </section>
-
-    <section class="wrap cards chapter-five-cards" aria-label="Módulos del Capítulo V de PROYECTA-IA">
-      <article class="module-card blue">
-        <div class="module-top">
-          <span class="module-number">V-A</span>
-          <div class="module-icon">💰</div>
-        </div>
-        <div class="module-body">
-          <h3>Análisis Económico</h3>
-          <p>
+</a>
+</div>
+</article>
+</section>
+<section aria-label="Capítulo V" class="wrap chapter-heading chapter-five-heading">
+<span>CAPÍTULO V</span>
+<h2>ANÁLISIS Y/O EVALUACIÓN ECONÓMICA</h2>
+<p>Análisis de los costos del proyecto y, cuando corresponda, evaluación económica-social, evaluación económico-financiera e investigación de mercados para sustentar su factibilidad.</p>
+</section>
+<section aria-label="Módulos del Capítulo V de PROYECTA-IA" class="wrap cards chapter-five-cards">
+<article class="module-card blue">
+<div class="module-top">
+<span class="module-number">V-A</span>
+<div class="module-icon">💰</div>
+</div>
+<div class="module-body">
+<h3>Análisis Económico</h3>
+<p>
             Ayuda a organizar los costos del proyecto: hardware y equipos, software, implementación,
             recursos humanos y otros costos pertinentes; consolida las tablas en bolivianos (Bs.) y orienta
             el análisis económico sin convertirlo obligatoriamente en una evaluación financiera.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-analisis-economico/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-analisis-economico/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card green">
-        <div class="module-top">
-          <span class="module-number">V-B</span>
-          <div class="module-icon">⚖️</div>
-        </div>
-        <div class="module-body">
-          <h3>Evaluación Económica-Social</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card green">
+<div class="module-top">
+<span class="module-number">V-B</span>
+<div class="module-icon">⚖️</div>
+</div>
+<div class="module-body">
+<h3>Evaluación Económica-Social</h3>
+<p>
             Módulo opcional para proyectos sin ingresos directos. Orienta el cálculo de la relación
             Beneficio/Costo (B/C), la identificación y valoración de beneficios y contrabeneficios,
             y la interpretación de la factibilidad económica-social del proyecto.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-evaluacion-economica-social/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-evaluacion-economica-social/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card orange">
-        <div class="module-top">
-          <span class="module-number">V-C</span>
-          <div class="module-icon">📈</div>
-        </div>
-        <div class="module-body">
-          <h3>Evaluación Económico-Financiera</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card orange">
+<div class="module-top">
+<span class="module-number">V-C</span>
+<div class="module-icon">📈</div>
+</div>
+<div class="module-body">
+<h3>Evaluación Económico-Financiera</h3>
+<p>
             Para proyectos que generan ingresos o servicios comercializables. Ayuda a calcular e interpretar
             VAN, TIR, tiempo de recuperación de capital, B/C y ROI; incluye orientación para estructurar flujos
             y utilizar las funciones correspondientes de Excel.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-evaluacion-financiera/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-evaluacion-financiera/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card purple">
-        <div class="module-top">
-          <span class="module-number">V-D</span>
-          <div class="module-icon">🔎</div>
-        </div>
-        <div class="module-body">
-          <h3>Investigación y Estudio de Mercados</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card purple">
+<div class="module-top">
+<span class="module-number">V-D</span>
+<div class="module-icon">🔎</div>
+</div>
+<div class="module-body">
+<h3>Investigación y Estudio de Mercados</h3>
+<p>
             Orienta la identificación de clientes actuales y potenciales, segmentación, encuestas y entrevistas,
             tamaño de muestra, codificación y procesamiento de datos, gráficas en Excel y proyección de la demanda
             para Telecomunicaciones, Control y Automatización y Electromedicina.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-estudio-mercados/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-estudio-mercados/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-    </section>
-
-
-    <section class="wrap chapter-heading chapter-six-heading" aria-label="Capítulo VI">
-      <span>CAPÍTULO VI</span>
-      <h2>CONCLUSIONES Y RECOMENDACIONES</h2>
-      <p>Cierre académico del Proyecto de Grado: comprobación del cumplimiento de los objetivos, síntesis de resultados y recomendaciones de mejora futura.</p>
-    </section>
-
-    <section class="wrap cards chapter-six-cards" aria-label="Módulo del Capítulo VI de PROYECTA-IA">
-      <article class="module-card green">
-        <div class="module-top">
-          <span class="module-number">VI</span>
-          <div class="module-icon">✅</div>
-        </div>
-        <div class="module-body">
-          <h3>Conclusiones y Recomendaciones</h3>
-          <p>
+</a>
+</div>
+</article>
+</section>
+<section aria-label="Capítulo VI" class="wrap chapter-heading chapter-six-heading">
+<span>CAPÍTULO VI</span>
+<h2>CONCLUSIONES Y RECOMENDACIONES</h2>
+<p>Cierre académico del Proyecto de Grado: comprobación del cumplimiento de los objetivos, síntesis de resultados y recomendaciones de mejora futura.</p>
+</section>
+<section aria-label="Módulo del Capítulo VI de PROYECTA-IA" class="wrap cards chapter-six-cards">
+<article class="module-card green">
+<div class="module-top">
+<span class="module-number">VI</span>
+<div class="module-icon">✅</div>
+</div>
+<div class="module-body">
+<h3>Conclusiones y Recomendaciones</h3>
+<p>
             Revisa que las conclusiones respondan a los objetivos y al problema con evidencias verificables,
             y que las recomendaciones nazcan de resultados, limitaciones y mejoras futuras del prototipo o sistema.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-conclusiones-recomendaciones/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-conclusiones-recomendaciones/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-    </section>
-
-    <section class="wrap chapter-heading final-doc-heading" aria-label="Parte final del Proyecto de Grado">
-      <span>PARTE FINAL DEL DOCUMENTO</span>
-      <h2>REFERENCIAS, GLOSARIO, APÉNDICES, ANEXOS Y RESUMEN</h2>
-      <p>Herramientas para completar los componentes finales obligatorios del Proyecto de Grado una vez concluido el desarrollo de los capítulos.</p>
-    </section>
-
-    <section class="wrap cards final-doc-cards" aria-label="Módulos de cierre documental de PROYECTA-IA">
-      <article class="module-card purple">
-        <div class="module-top">
-          <span class="module-number">FINAL</span>
-          <div class="module-icon">📚</div>
-        </div>
-        <div class="module-body">
-          <h3>Referencias, Glosario, Apéndices y Anexos</h3>
-          <p>
+</a>
+</div>
+</article>
+</section>
+<section aria-label="Parte final del Proyecto de Grado" class="wrap chapter-heading final-doc-heading">
+<span>PARTE FINAL DEL DOCUMENTO</span>
+<h2>REFERENCIAS, GLOSARIO, APÉNDICES, ANEXOS Y RESUMEN</h2>
+<p>Herramientas para completar los componentes finales obligatorios del Proyecto de Grado una vez concluido el desarrollo de los capítulos.</p>
+</section>
+<section aria-label="Módulos de cierre documental de PROYECTA-IA" class="wrap cards final-doc-cards">
+<article class="module-card purple">
+<div class="module-top">
+<span class="module-number">FINAL</span>
+<div class="module-icon">📚</div>
+</div>
+<div class="module-body">
+<h3>Referencias, Glosario, Apéndices y Anexos</h3>
+<p>
             Comprueba correspondencia entre citas y referencias, orienta el glosario y diferencia correctamente
             los apéndices elaborados por el estudiante de los anexos provenientes de fuentes externas.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-parte-final/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-parte-final/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="module-card blue">
-        <div class="module-top">
-          <span class="module-number">RESUMEN</span>
-          <div class="module-icon">📝</div>
-        </div>
-        <div class="module-body">
-          <h3>Resumen Final</h3>
-          <p>
+</a>
+</div>
+</article>
+<article class="module-card blue">
+<div class="module-top">
+<span class="module-number">RESUMEN</span>
+<div class="module-icon">📝</div>
+</div>
+<div class="module-body">
+<h3>Resumen Final</h3>
+<p>
             Construye o revisa el resumen definitivo en cuatro párrafos: propósito, métodos, resultados y conclusiones,
             con redacción científica, conectores y un máximo de 250 palabras.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-resumen-final/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-resumen-final/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-    </section>
-
-    <section class="wrap chapter-heading final-review-heading" aria-label="Revisión Final Integral">
-      <span>ÚLTIMO PASO</span>
-      <h2>REVISIÓN FINAL INTEGRAL</h2>
-      <p>Cuando el Proyecto de Grado esté concluido al 100 %, este módulo revisa integralmente el archivo Word y determina si alcanza el mínimo de 90/100 para pasar a la revisión final del docente.</p>
-    </section>
-
-    <section class="wrap cards final-review-cards" aria-label="Revisión Final Integral de PROYECTA-IA">
-      <article class="module-card orange">
-        <div class="module-top">
-          <span class="module-number">100%</span>
-          <div class="module-icon">🎓</div>
-        </div>
-        <div class="module-body">
-          <h3>Revisión Final Integral</h3>
-          <p>
+</a>
+</div>
+</article>
+</section>
+<section aria-label="Revisión Final Integral" class="wrap chapter-heading final-review-heading">
+<span>ÚLTIMO PASO</span>
+<h2>REVISIÓN FINAL INTEGRAL</h2>
+<p>Cuando el Proyecto de Grado esté concluido al 100 %, este módulo revisa integralmente el archivo Word y determina si alcanza el mínimo de 90/100 para pasar a la revisión final del docente.</p>
+</section>
+<section aria-label="Revisión Final Integral de PROYECTA-IA" class="wrap cards final-review-cards">
+<article class="module-card orange">
+<div class="module-top">
+<span class="module-number">100%</span>
+<div class="module-icon">🎓</div>
+</div>
+<div class="module-body">
+<h3>Revisión Final Integral</h3>
+<p>
             Revisa el Proyecto de Grado completo, formato institucional, Capítulos I–VI, APA 6, tablas y figuras,
             redacción científica y coherencia global; emite una ponderación sobre 100 y, si alcanza 90/100, habilita
             el certificado preliminar de revisión PROYECTA-IA para la posterior revisión docente.
           </p>
-          <a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-revision-final/">
+<a class="module-link" href="https://luisctito-sketch.github.io/proyecta-ia-revision-final/">
             Abrir chatbot <span>→</span>
-          </a>
-        </div>
-      </article>
-    </section>
-
-    <section class="wrap roadmap">
-      <div class="roadmap-card">
-        <div class="roadmap-icon">✅</div>
-        <div>
-          <h3>PROYECTA-IA continúa creciendo</h3>
-          <p>
+</a>
+</div>
+</article>
+</section>
+<section class="wrap roadmap">
+<div class="roadmap-card">
+<div class="roadmap-icon">✅</div>
+<div>
+<h3>PROYECTA-IA continúa creciendo</h3>
+<p>
             PROYECTA-IA integra la ruta completa del Proyecto de Grado: Capítulos I–VI, herramientas transversales,
             análisis y evaluaciones económicas, estudio de mercados, parte final del documento, resumen y la
             Revisión Final Integral. Cada chatbot especializado mantiene su acceso mediante la base central de C.I.
           </p>
-        </div>
-      </div>
-    </section>
+</div>
+</div>
+</section>
+<section class="wrap principles">
+<div class="principle">
+<span>✓</span>
+<div><strong>Revisar, no sustituir</strong><p>La herramienta orienta al estudiante sin hacer su proyecto por él o ella.</p></div>
+</div>
+<div class="principle">
+<span>✓</span>
+<div><strong>Coherencia transversal</strong><p>Cada módulo busca mantener relacionados título, objetivo y demás partes del Proyecto de Grado.</p></div>
+</div>
+<div class="principle">
+<span>✓</span>
+<div><strong>Rigor académico</strong><p>Se priorizan redacción científica, criterios metodológicos y fuentes verificables.</p></div>
+</div>
+</section>
 
-    <section class="wrap principles">
-      <div class="principle">
-        <span>✓</span>
-        <div><strong>Revisar, no sustituir</strong><p>La herramienta orienta al estudiante sin hacer su proyecto por él o ella.</p></div>
+<dialog aria-labelledby="portalGuideTitle" class="portal-dialog" id="portalGuideDialog">
+<div class="portal-dialog-shell">
+<div class="portal-dialog-header">
+<div>
+<h2 id="portalGuideTitle">Guía de usuario de PROYECTA-IA</h2>
+<p>Manual breve para acceder y consultar los chatbots especializados.</p>
+</div>
+<button aria-label="Cerrar guía" class="portal-dialog-close" data-close-dialog="" type="button">×</button>
+</div>
+<div class="portal-dialog-body">
+<h3>¿Cómo comenzar?</h3>
+<ol>
+<li><strong>Ingresa al portal principal.</strong> La portada de PROYECTA-IA es pública y reúne todos los módulos disponibles.</li>
+<li><strong>Elige el chatbot adecuado.</strong> Puedes utilizar el menú <em>Chatbots</em> de la parte superior o recorrer las tarjetas organizadas por capítulos y herramientas transversales.</li>
+<li><strong>Abre el módulo.</strong> Cada chatbot especializado se abre en su propia página y conserva un botón para regresar al portal principal.</li>
+<li><strong>Identifícate cuando corresponda.</strong> Los módulos protegidos solicitan un número de C.I. autorizado. Escribe únicamente números. El acceso se valida mediante la base central de PROYECTA-IA y cada chatbot solicita una nueva autenticación al ingresar.</li>
+</ol>
+<h3>¿Cómo realizar una consulta?</h3>
+<ol>
+<li>Lee primero el propósito y las instrucciones del módulo.</li>
+<li>Selecciona la tarea que deseas realizar: elaborar, revisar, comparar, comprobar coherencia, corregir redacción, preparar una defensa u otra función disponible.</li>
+<li>Proporciona los datos reales de tu proyecto. Cuando el módulo lo permita, puedes pegar texto o cargar archivos para revisión.</li>
+<li>Revisa el dictamen, las observaciones y la versión propuesta. No copies automáticamente: contrasta la respuesta con tu proyecto, tus evidencias y las normas vigentes de tu institución.</li>
+<li>Corrige tu documento y vuelve a consultarlo cuando necesites una segunda revisión.</li>
+</ol>
+<h3>Ruta recomendada</h3>
+<div class="portal-info-box">
+        Trabaja de manera progresiva: <strong>Generalidades → Marco Teórico/Conceptual → Ingeniería del Proyecto → Pruebas y evaluación técnica → Análisis/Evaluación económica → Conclusiones → Parte final → Revisión Final Integral</strong>. Las herramientas transversales pueden utilizarse en cualquier etapa.
       </div>
-      <div class="principle">
-        <span>✓</span>
-        <div><strong>Coherencia transversal</strong><p>Cada módulo busca mantener relacionados título, objetivo y demás partes del Proyecto de Grado.</p></div>
-      </div>
-      <div class="principle">
-        <span>✓</span>
-        <div><strong>Rigor académico</strong><p>Se priorizan redacción científica, criterios metodológicos y fuentes verificables.</p></div>
-      </div>
-    </section>
-  </main>
+<h3>Buenas prácticas</h3>
+<ul>
+<li>Utiliza información auténtica de tu proyecto y no inventes datos, resultados ni referencias.</li>
+<li>Verifica siempre autores, citas, normas técnicas, cálculos, mediciones y resultados.</li>
+<li>Conserva tus versiones de trabajo y las observaciones recibidas.</li>
+<li>No subas contraseñas, credenciales bancarias u otros datos personales innecesarios.</li>
+<li>PROYECTA-IA orienta y revisa; no sustituye al tutor, tribunal, reglamento ni procedimientos de la institución donde se presenta el trabajo.</li>
+</ul>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="portalAboutTitle" class="portal-dialog" id="portalAboutDialog">
+<div class="portal-dialog-shell">
+<div class="portal-dialog-header">
+<div>
+<h2 id="portalAboutTitle">Acerca de PROYECTA-IA</h2>
+<p>Apoyo metodológico, académico y técnico para Proyectos de Grado.</p>
+</div>
+<button aria-label="Cerrar información" class="portal-dialog-close" data-close-dialog="" type="button">×</button>
+</div>
+<div class="portal-dialog-body">
+<h3>¿Qué es PROYECTA-IA?</h3>
+<p><strong>PROYECTA-IA</strong> es un ecosistema digital de chatbots especializados que utiliza inteligencia artificial para acompañar la elaboración, revisión y mejora de Proyectos de Grado y trabajos académicos universitarios. Sus módulos apoyan la formulación metodológica, la redacción científica, la coherencia entre apartados, citas y referencias, desarrollo técnico, pruebas, evaluación, presentación de resultados, análisis económico, preparación de la defensa y revisión final del documento.</p>
+<p>Ha sido concebido con una orientación general para estudiantes universitarios, independientemente de la institución en la que desarrollen su trabajo. Cada usuario debe adaptar las orientaciones a su área de conocimiento, reglamento institucional, modalidad de titulación y criterios establecidos por su tutor o tribunal.</p>
+<div class="portal-info-box"><strong>Principio de uso:</strong> PROYECTA-IA ayuda a pensar, revisar y mejorar; no reemplaza la autoría del estudiante ni la evaluación académica humana.</div>
+<h3>Creador</h3>
+<p><strong>Luis Cabezas Tito</strong>, ingeniero electrónico de profesión, educador y creador de contenidos educativos digitales.</p>
+<div class="portal-profile">
+<div class="portal-profile-item"><strong>Formación profesional</strong>Ingeniero Electrónico.</div>
+<div class="portal-profile-item"><strong>Administración</strong>Mágister en Administración de Empresas (MBA · Master of Business Administration).</div>
+<div class="portal-profile-item"><strong>Doctorado</strong>Philosophy Doctor en Educación con Enfoque en la Complejidad y la Investigación Transdisciplinar.</div>
+<div class="portal-profile-item"><strong>Formación posdoctoral</strong>Programa Posdoctoral en Educación, Investigación y Complejidad.</div>
+<div class="portal-profile-item"><strong>Divulgación educativa</strong>Edutuber y YouTuber.</div>
+<div class="portal-profile-item"><strong>P3000 · 4000 · 5000</strong>Facilitador Certificado de P3000 4000 5000.</div>
+</div>
+<h3>Comunidades y canales</h3>
+<div class="portal-links">
+<a href="https://www.youtube.com/@educcartes3268" rel="noopener noreferrer" target="_blank">▶ Educcartes · YouTube</a>
+<a href="https://www.youtube.com/@multiversidadmatematica8812" rel="noopener noreferrer" target="_blank">▶ Multiversidad Matemática · YouTube</a>
+<a href="https://p3000.info/index.php/facilitadores-certificados-bolivia/" rel="noopener noreferrer" target="_blank">✓ Facilitadores Certificados P3000 · Bolivia</a>
+<a href="https://p40005000.info/cuadernos-steamlab/" rel="noopener noreferrer" target="_blank">⚙ STEAMLab · Cuadernos</a>
+<a href="https://www.youtube.com/results?search_query=STEAMLab" rel="noopener noreferrer" target="_blank">▶ STEAMLab · YouTube</a>
+</div>
+<h3>Contacto</h3>
+<div class="portal-contact">
+<a href="mailto:luisctito@outlook.com">✉ luisctito@outlook.com</a>
+<a href="tel:+59173232243">☎ +591 73232243</a>
+<span>📍 La Paz, Bolivia</span>
+</div>
+</div>
+</div>
+</dialog>
+</main>
+<footer>
+<div class="wrap footer-inner">
+<div>
+<strong>PROYECTA-IA</strong>
+<p>Apoyo metodológico para Proyectos de Grado</p>
+</div>
+<div class="footer-creator">
+<span>Creado por</span>
+<strong>Luis Cabezas Tito, Ph. D.</strong>
+</div>
+</div>
+</footer>
+<script id="proyecta-nav-script">
+(() => {
+  const $ = (s, r=document) => r.querySelector(s);
+  const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
-  <footer>
-    <div class="wrap footer-inner">
-      <div>
-        <strong>PROYECTA-IA</strong>
-        <p>Taller de Tesis II · Proyecto de Grado</p>
-      </div>
-      <div class="footer-creator">
-        <span>Creado por</span>
-        <strong>Luis Cabezas Tito, Ph. D.</strong>
-      </div>
-    </div>
-  </footer>
+  const homeBtn = $('#portalHomeBtn');
+  const chatBtn = $('#portalChatbotsBtn');
+  const guideBtn = $('#portalGuideBtn');
+  const aboutBtn = $('#portalAboutBtn');
+  const dropdown = $('#portalChatbotDropdown');
+  const closeDrop = $('#portalDropdownClose');
+  const groupsBox = $('#portalMenuGroups');
+  const search = $('#portalMenuSearch');
+  const guideDialog = $('#portalGuideDialog');
+  const aboutDialog = $('#portalAboutDialog');
 
-  <script src="app.js"></script>
+  function groupTitle(cardsSection) {
+    const prev = cardsSection.previousElementSibling;
+    if (prev && prev.classList.contains('chapter-heading')) {
+      const badge = prev.querySelector('span')?.textContent?.trim();
+      const title = prev.querySelector('h2')?.textContent?.trim();
+      return badge || title || 'Módulos';
+    }
+    return 'Módulos';
+  }
+
+  function buildMenu() {
+    if (!groupsBox || groupsBox.dataset.ready === '1') return;
+    const sections = $$('.cards');
+    sections.forEach(section => {
+      const cards = $$('.module-card', section).filter(card => card.querySelector('a[href]') && card.querySelector('h3'));
+      if (!cards.length) return;
+      const group = document.createElement('section');
+      group.className = 'portal-menu-group';
+      const h = document.createElement('h4');
+      h.textContent = groupTitle(section);
+      group.appendChild(h);
+      const list = document.createElement('div');
+      list.className = 'portal-menu-items';
+      cards.forEach(card => {
+        const a0 = card.querySelector('a[href]');
+        const name = card.querySelector('h3').textContent.trim();
+        const code = card.querySelector('.module-number')?.textContent?.trim() || '';
+        const a = document.createElement('a');
+        a.className = 'portal-menu-item';
+        a.href = a0.href;
+        a.innerHTML = `<span class="portal-menu-code"></span><span></span>`;
+        a.querySelector('.portal-menu-code').textContent = code;
+        a.querySelector('span:last-child').textContent = name;
+        a.dataset.search = `${code} ${name}`.toLowerCase();
+        list.appendChild(a);
+      });
+      group.appendChild(list);
+      groupsBox.appendChild(group);
+    });
+    groupsBox.dataset.ready = '1';
+  }
+
+  function openDropdown() {
+    buildMenu();
+    dropdown.hidden = false;
+    chatBtn.setAttribute('aria-expanded','true');
+    setTimeout(() => search?.focus(), 0);
+  }
+  function closeDropdown() {
+    dropdown.hidden = true;
+    chatBtn.setAttribute('aria-expanded','false');
+  }
+  function toggleDropdown() { dropdown.hidden ? openDropdown() : closeDropdown(); }
+
+  homeBtn?.addEventListener('click', () => { closeDropdown(); window.scrollTo({top:0, behavior:'smooth'}); });
+  chatBtn?.addEventListener('click', (e) => { e.stopPropagation(); toggleDropdown(); });
+  closeDrop?.addEventListener('click', closeDropdown);
+  dropdown?.addEventListener('click', e => e.stopPropagation());
+  document.addEventListener('click', closeDropdown);
+
+  search?.addEventListener('input', () => {
+    const q = search.value.trim().toLowerCase();
+    $$('.portal-menu-group', groupsBox).forEach(group => {
+      let visible = 0;
+      $$('.portal-menu-item', group).forEach(item => {
+        const show = !q || item.dataset.search.includes(q);
+        item.style.display = show ? 'flex' : 'none';
+        if (show) visible++;
+      });
+      group.style.display = visible ? 'block' : 'none';
+    });
+  });
+
+  function showDialog(d) { closeDropdown(); if (d?.showModal) d.showModal(); }
+  guideBtn?.addEventListener('click', () => showDialog(guideDialog));
+  aboutBtn?.addEventListener('click', () => showDialog(aboutDialog));
+  $$('[data-close-dialog]').forEach(btn => btn.addEventListener('click', () => btn.closest('dialog')?.close()));
+  [guideDialog, aboutDialog].forEach(d => d?.addEventListener('click', e => {
+    if (e.target === d) d.close();
+  }));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDropdown(); });
+})();
+</script><script src="app.js"></script>
 </body>
 </html>
