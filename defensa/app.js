@@ -1,3 +1,4 @@
+/* PROYECTA-IA 1.0.1 | Autor: Luis Cabezas Tito | © 2026 Luis Cabezas Tito. Todos los derechos reservados. | PROVENANCE-ID: PIA-LCT-2026-v1.0.1 */
 const $ = id => document.getElementById(id);
 const esc = s => (s ?? "").toString().replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fmtMin = m => {

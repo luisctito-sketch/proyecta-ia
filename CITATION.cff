@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "PROYECTA-IA"
+message: "Para referirse a PROYECTA-IA, cite al autor y la versión utilizada."
+type: software
+authors:
+  - family-names: "Cabezas Tito"
+    given-names: "Luis"
+version: "1.0.1"
+date-released: "2026-11-05"
+url: "https://luisctito-sketch.github.io/proyecta-ia/"
